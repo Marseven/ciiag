@@ -59,7 +59,8 @@ Route::get('/email/verification-notification', function () {
     return back()->with('success', 'Le lien de vérification a été envoyé. Consultez votre boîte mail (les spams également) pour valider votre email.');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::post('/notification/ebilling', [PaymentController::class, 'notify_ebilling'])->name('notification-ebilling-payment');
+Route::post('/notification/ebilling', [WelcomeController::class, 'notify_ebilling'])->name('notification-ebilling-payment');
+Route::get('/callback/ebilling/{entity}', [WelcomeController::class, 'callback_ebilling'])->name('ebilling-payment');
 
 Route::middleware('auth')->group(function () {
 
