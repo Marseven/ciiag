@@ -62,7 +62,7 @@
                     <div class="tz_width_column tz_text_box_slider_padding">
                         <div class="tz_check_width_right_position tz_custom_width tz_width_box" style="width: 490px;">
                             <div class="tz_maniva_meetup_title tz_box_text_bk text-left">
-                                <h3 class="tz_meetup_general_title tz_meetup_general_title_2">Merci </h3>
+                                <h3 class="tz_meetup_general_title tz_meetup_general_title_2">Merci pour votre inscription</h3>
                                 <div class="tz_image_title_meetup">
                                     <hr>
                                 </div>
@@ -85,40 +85,40 @@
                                             <p class="tz_list_item_content"> Nom & Prénom : {{$registration->firstname}} {{$registration->lastname}} </p>
                                         </li>
                                         <li>
-                                        <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                            <i class="fa fa-check-square-o"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> Genre : {{$registration->sexe}} </p>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Genre : {{$registration->sexe}} </p>
                                         </li>
                                         <li>
-                                        <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                            <i class="fa fa-check-square-o"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> Email : {{$registration->email}}</p>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Email : {{$registration->email}}</p>
                                         </li>
                                         <li>
-                                        <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                            <i class="fa fa-check-square-o"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> Téléphone : {{$registration->phone_fixe}} {{' /'.$registration->phone_mobile}} </p>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Téléphone : {{$registration->phone_fixe}} {{' /'.$registration->phone_mobile}} </p>
                                         </li>
                                         <li>
-                                        <span class="tz_icon_maniva_list">
-                                            <i class="fa fa-times"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> Pays de provenance : {{$registration->country}}</p>
+                                            <span class="tz_icon_maniva_list">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Pays de provenance : {{$registration->country}}</p>
                                         </li>
                                         <li>
-                                        <span class="tz_icon_maniva_list">
-                                            <i class="fa fa-times"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> N° Adhérant : {{$registration->number_adherant}}</p>
+                                            <span class="tz_icon_maniva_list">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> N° Adhérant : {{$registration->number_adherant}}</p>
                                         </li>
-
-                                        <span class="tz_icon_maniva_list">
-                                            <i class="fa fa-times"></i>
-                                        </span>
-                                            <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala}} </p>
+                                        <li>
+                                            <span class="tz_icon_maniva_list">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala}} </p>
                                         </li>
                                     </ul>
                                 </div>
