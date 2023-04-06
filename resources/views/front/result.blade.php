@@ -62,13 +62,13 @@
                     <div class="tz_width_column tz_text_box_slider_padding">
                         <div class="tz_check_width_right_position tz_custom_width tz_width_box" style="width: 490px;">
                             <div class="tz_maniva_meetup_title tz_box_text_bk text-left">
-                                <h3 class="tz_meetup_general_title tz_meetup_general_title_2">Content TECH</h3>
+                                <h3 class="tz_meetup_general_title tz_meetup_general_title_2">Merci </h3>
                                 <div class="tz_image_title_meetup">
-                                    <img src="images/line-2.png" alt="line">
+                                    <hr>
                                 </div>
                             <span class="tz_meetup_video_sub_title">
                                 <i class="fa fa-clock-o tz_icon_position_left"></i>
-                                February 24, 2016 – Free Virtual Event
+                                February 24, 2016 – Billet Adhérent
                                 <span class="tz_meetup_video_sub_title_line"></span>
                             </span>
                                 <div class="tz_meetup_content">
@@ -82,42 +82,47 @@
                                     <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                         <i class="fa fa-check-square-o"></i>
                                     </span>
-                                            <p class="tz_list_item_content"> Building a Demand Generation Program that Works with Marketing Automation </p>
+                                            <p class="tz_list_item_content"> Nom & Prénom : {{$registration->firstname}} {{$registration->lastname}} </p>
                                         </li>
                                         <li>
                                         <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                             <i class="fa fa-check-square-o"></i>
                                         </span>
-                                            <p class="tz_list_item_content"> Creating a Process for Visual Storytelling. </p>
+                                            <p class="tz_list_item_content"> Genre : {{$registration->sexe}} </p>
                                         </li>
                                         <li>
                                         <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                             <i class="fa fa-check-square-o"></i>
                                         </span>
-                                            <p class="tz_list_item_content"> Leveraging the Best Workflow Technology to Enhance Your Content Marketing </p>
+                                            <p class="tz_list_item_content"> Email : {{$registration->email}}</p>
                                         </li>
                                         <li>
                                         <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                             <i class="fa fa-check-square-o"></i>
                                         </span>
-                                            <p class="tz_list_item_content"> Email Marketing: 10 Things You Are Not Doing (and it’s killing you!) </p>
+                                            <p class="tz_list_item_content"> Téléphone : {{$registration->phone_fixe}} {{' /'.$registration->phone_mobile}} </p>
                                         </li>
                                         <li>
                                         <span class="tz_icon_maniva_list">
                                             <i class="fa fa-times"></i>
                                         </span>
-                                            <p class="tz_list_item_content"> The Ultimate Guide to Social Media Tools and Technology </p>
+                                            <p class="tz_list_item_content"> Pays de provenance : {{$registration->country}}</p>
                                         </li>
                                         <li>
                                         <span class="tz_icon_maniva_list">
                                             <i class="fa fa-times"></i>
                                         </span>
-                                            <p class="tz_list_item_content"> Creating a Content Marketing Strategy that Works with Technology </p>
+                                            <p class="tz_list_item_content"> N° Adhérant : {{$registration->number_adherant}}</p>
+                                        </li>
+
+                                        <span class="tz_icon_maniva_list">
+                                            <i class="fa fa-times"></i>
+                                        </span>
+                                            <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala}} </p>
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="tz_btn_video_meetup tz_meetup_btn_dark" target="_blank" href="index-2.html">LEARN MORE</a>
-                                <a class="tz_btn_video_meetup tz_btn_shop_meetup tz_meetup_btn_dark" target="_blank" href="index-2.html">VIEW OUR SHOP</a>
+                                <a class="tz_btn_video_meetup tz_btn_shop_meetup tz_meetup_btn_dark" target="_blank" href="#">Télécharger le Billet</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +134,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname">
+                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
                                             </span>
                                             <i class="fa fa-user"></i>
                                         </p>
@@ -137,7 +142,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname">
+                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
                                             </span>
                                             <i class="fa fa-user"></i>
                                         </p>
@@ -158,7 +163,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="" name="phone_fixe">
+                                                <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
                                             </span>
                                             <i class="fa fa-phone"></i>
                                         </p>
@@ -166,7 +171,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Mobile " aria-invalid="false" size="40" value="" name="phone_mobile">
+                                                <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
                                             </span>
                                             <i class="fa fa-phone"></i>
                                         </p>
@@ -176,7 +181,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="" name="email">
+                                                <input class="wpcf7-form-control wpcf7-text" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
                                             </span>
                                             <i class="fa fa-envelope-o"></i>
 
@@ -186,7 +191,7 @@
                                     <div class="col-lg-6">
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="" name="country">
+                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
                                             </span>
                                             <i class="fa fa-map-marker"></i>
                                         </p>
@@ -206,7 +211,7 @@
                                         </p>
                                         <p>
                                             <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" aria-required="true" size="40" value="" name="number_adherant">
+                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
                                             </span>
                                             <i class="fa fa-number"></i>
                                         </p>
