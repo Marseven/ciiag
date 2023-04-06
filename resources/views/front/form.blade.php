@@ -1,0 +1,173 @@
+@extends('layouts.default')
+
+@push('styles')
+@endpush
+
+@section('content')
+
+ <!-- Contact start -->
+ <section id="tz_contact">
+
+
+    <div class="tz_contact_icon_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon">
+                                <i class="fa fa-clock-o"></i>
+                            </span>
+                            <h4>Dates</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>Monday-Friday: 8:00AM-05PM</p>
+                            <p>Saturday: 09:00AM-01:00PM</p>
+                            <p>Sunday: Holiday</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_1">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                            <h4>Salles</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>Semona Web Technologies</p>
+                            <p>9315 Circle Drive Street,</p>
+                            <p>Santa Cruz, CA 95060, USA</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_2">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            <h4> Plus d'infos </h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>info@templaza.com</p>
+                            <p>+1-202-555-0105 – 120</p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}">
+                        @csrf
+                        <div class="tz_meetup_wpcf7-form">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname">
+                                        </span>
+                                        <i class="fa fa-user"></i>
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname">
+                                        </span>
+                                        <i class="fa fa-user"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>
+                                       <select name="sexe" id="">
+                                        <option value="H">Homme</option>
+                                        <option value="F">Femme</option>
+                                       </select>
+                                        <i class="fa fa-sort-desc"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="" name="phone_fixe">
+                                        </span>
+                                        <i class="fa fa-phone"></i>
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Mobile " aria-invalid="false" size="40" value="" name="phone_mobile">
+                                        </span>
+                                        <i class="fa fa-phone"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="" name="email">
+                                        </span>
+                                        <i class="fa fa-envelope-o"></i>
+
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="" name="country">
+                                        </span>
+                                        <i class="fa fa-map-marker"></i>
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                    <h6>Statut IIA 2023</h6>
+                                    <p>
+                                        Adhérent <br>
+                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="adherant"> Oui
+                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="adherant"> Non
+                                    </p>
+                                    <p>
+                                        <span class="wpcf7-form-control-wrap">
+                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" aria-required="true" size="40" value="" name="number_adherant">
+                                        </span>
+                                        <i class="fa fa-number"></i>
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <p>
+                                        Participation au Gala : <br>
+                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="gala"> Oui
+                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="gala"> Non
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p>
+                                <input class="wpcf7-form-control wpcf7-submit" type="submit" value="S'inscrire">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Contact end -->
+
+@endsection
+
+@push('scripts')
+@endpush
