@@ -42,7 +42,7 @@
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
                                     <a class="tz_upcoming_event" title="meetup" href="#register"> Évènement à venir </a>
-                                    <p class="tz_description_event">IIA CONFERENCE INTERNATIONAL DU 15-15 JUIN 2023 </p>
+                                    <p class="tz_description_event">IIA CONFERENCE INTERNATIONAL DU 15-16 JUIN 2023 </p>
                                 </div>
                             </div>
                         </div>
