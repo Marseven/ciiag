@@ -34,10 +34,9 @@ class WelcomeController extends BasicController
         $registration->sexe = $request->sexe;
         $exist = Registration::where('email',  $request->email)->first();
         if($exist != null){
-            return back()->error('Cette email est déjà utilisé.');
+            return back()->with('error', "Cette email existe déjà.");;
         }
         $registration->email = $request->email;
-
         $registration->phone_fixe = $request->phone_fixe;
         $registration->phone_mobile = $request->phone_mobile;
         $registration->country = $request->country;
