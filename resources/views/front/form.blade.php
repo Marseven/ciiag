@@ -12,66 +12,7 @@
     <div class="tz_contact_icon_form">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="tz_contact_meet_2">
-                        <div class="tz_contact_detail_meet">
-                            <span class="tz_contact_meet_icon">
-                                <i class="fa fa-money"></i>
-                            </span>
-                            <h4>Prix</h4>
-                        </div>
-                        <div class="tz_meetup_contact_detail">
-                            <h6>Inscription avant le 20 mai</h6>
-                            <p>Adhérent : 300 000 FCFA</p>
-                            <p>Externe : 430 000 FCFA</p>
 
-                            <h6>Inscription après le 20 mai</h6>
-                            <p>Adhérent : 370 000 FCFA</p>
-                            <p>Externe : 500 000 FCFA</p>
-
-                            <h6>Participation au Gala</h6>
-                            <p>100 000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="tz_contact_meet_2">
-                        <div class="tz_contact_detail_meet">
-                            <span class="tz_contact_meet_icon">
-                                <i class="fa fa-clock-o"></i>
-                            </span>
-                            <h4>Dates</h4>
-                        </div>
-                        <div class="tz_meetup_contact_detail">
-                            <p>Jeudi 15 juin 2023</p>
-                            <p>Vendredi 16 juin 2023</p>
-                        </div>
-                    </div>
-                    <div class="tz_contact_meet_2">
-                        <div class="tz_contact_detail_meet">
-                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_1">
-                                <i class="fa fa-map-marker"></i>
-                            </span>
-                            <h4>Salle</h4>
-                        </div>
-                        <div class="tz_meetup_contact_detail">
-                            <p>ANPI, Centre-ville</p>
-                            <p>Libreville, Gabon</p>
-                        </div>
-                    </div>
-                    <div class="tz_contact_meet_2">
-                        <div class="tz_contact_detail_meet">
-                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_2">
-                                <i class="fa fa-envelope"></i>
-                            </span>
-                            <h4> Plus d'infos </h4>
-                        </div>
-                        <div class="tz_meetup_contact_detail">
-                            <p>contact@conferenceiiagabon.ga</p>
-                            <p>+241 74 01 02 03</p>
-
-                        </div>
-                    </div>
-
-                </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     @include('layouts.flash')
 
@@ -163,6 +104,66 @@
                             </p>
                         </div>
                     </form>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon">
+                                <i class="fa fa-money"></i>
+                            </span>
+                            <h4>Prix</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <h6>Inscription avant le 20 mai</h6>
+                            <p>Adhérent : 300 000 FCFA</p>
+                            <p>Externe : 430 000 FCFA</p>
+
+                            <h6>Inscription après le 20 mai</h6>
+                            <p>Adhérent : 370 000 FCFA</p>
+                            <p>Externe : 500 000 FCFA</p>
+
+                            <h6>Participation au Gala</h6>
+                            <p>100 000 FCFA</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon">
+                                <i class="fa fa-clock-o"></i>
+                            </span>
+                            <h4>Dates</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>Jeudi 15 juin 2023</p>
+                            <p>Vendredi 16 juin 2023</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_1">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                            <h4>Salle</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>ANPI, Centre-ville</p>
+                            <p>Libreville, Gabon</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_2">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            <h4> Plus d'infos </h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>contact@conferenceiiagabon.ga</p>
+                            <p>+241 74 01 02 03</p>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
