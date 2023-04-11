@@ -102,7 +102,7 @@
                                             <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                                 <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> Genre : {{$registration->sexe == "F" : "Femme" ? "Homme"}} </p>
+                                                <p class="tz_list_item_content"> Genre : {{$registration->sexe == "F" ? "Femme" : "Homme"}} </p>
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
@@ -126,13 +126,13 @@
                                             <span class="tz_icon_maniva_list">
                                                 <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> N° Adhérant : {{$registration->adherant  == 1 : $registration->number_adherant ? "Pas adhérant"}}</p>
+                                                <p class="tz_list_item_content"> N° Adhérant : {{$registration->adherant  == 1 ? $registration->number_adherant : "Pas adhérant"}}</p>
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list">
                                                 <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala == 1 : "Oui" ? "Non"}} </p>
+                                                <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala == 1 ? "Oui" : "Non"}} </p>
                                         </li>
                                     </ul>
                                 </div>
