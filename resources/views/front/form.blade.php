@@ -60,7 +60,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
+                                            <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
                                         </span>
                                         <i class="fa fa-user"></i>
                                     </p>
@@ -68,7 +68,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
+                                            <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
                                         </span>
                                         <i class="fa fa-user"></i>
                                     </p>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>
-                                    <select name="sexe" id="">
+                                    <select name="sexe" id="" class="form-control">
                                         <option value="H">Homme</option>
                                         <option value="F">Femme</option>
                                     </select>
@@ -89,7 +89,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
+                                            <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
                                         </span>
                                         <i class="fa fa-phone"></i>
                                     </p>
@@ -97,7 +97,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
+                                            <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
                                         </span>
                                         <i class="fa fa-phone"></i>
                                     </p>
@@ -107,7 +107,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
+                                            <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
                                         </span>
                                         <i class="fa fa-envelope-o"></i>
 
@@ -117,7 +117,7 @@
                                 <div class="col-lg-6">
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
+                                            <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
                                         </span>
                                         <i class="fa fa-map-marker"></i>
                                     </p>
@@ -132,12 +132,12 @@
                                     <h6>Statut IIA 2023</h6>
                                     <p>
                                         Adhérent <br>
-                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="adherant"> Oui
-                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="adherant"> Non
+                                        <input class="form-control" type="radio" value="1" name="adherant"> Oui
+                                        <input class="form-control" type="radio" value="0" name="adherant"> Non
                                     </p>
                                     <p>
                                         <span class="wpcf7-form-control-wrap">
-                                            <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
+                                            <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
                                         </span>
                                         <i class="fa fa-number"></i>
                                     </p>
@@ -146,8 +146,8 @@
                                 <div class="col-lg-6">
                                     <p>
                                         Participation au Gala : <br>
-                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="gala"> Oui
-                                        <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="gala"> Non
+                                        <input class="form-control" type="radio" value="1" name="gala"> Oui
+                                        <input class="form-control" type="radio" value="0" name="gala"> Non
                                     </p>
                                 </div>
                             </div>
