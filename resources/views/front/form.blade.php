@@ -16,6 +16,26 @@
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon">
+                                <i class="fa fa-money"></i>
+                            </span>
+                            <h4>Prix</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <h6>Inscription avant le 20 mai</h6>
+                            <p>Adhérent : 300 000 FCFA</p>
+                            <p>Externe : 430 000 FCFA</p>
+
+                            <h6>Inscription après le 20 mai</h6>
+                            <p>Adhérent : 370 000 FCFA</p>
+                            <p>Externe : 500 000 FCFA</p>
+
+                            <h6>Participation au Gala</h6>
+                            <p>100 000 FCFA</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon">
                                 <i class="fa fa-clock-o"></i>
                             </span>
                             <h4>Dates</h4>
@@ -59,16 +79,12 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>
-
-                                            <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
-
+                                        <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
                                     <p>
-
-                                            <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
-
+                                        <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
                                     </p>
                                 </div>
                             </div>
@@ -83,45 +99,31 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <p>
-
                                         <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
-
-
                                     </p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>
-
-                                            <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
-
+                                        <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
                                     <p>
-
-                                            <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
-
+                                        <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
                                     </p>
                                 </div>
                             </div>
                             <div class="row">
-
-
                                 <div class="col-lg-6">
                                     <p>
-
-                                            <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
-
+                                        <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
                                     </p>
                                 </div>
-
-
                             </div>
 
                             <div class="row">
-
                                 <div class="col-lg-6">
                                     <h6>Statut IIA 2023  : Adhérent</h6>
                                     <div class="form-check form-check-inline">

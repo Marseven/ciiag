@@ -16,13 +16,21 @@
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon">
-                                <i class="fa fa-clock-o"></i>
+                                <i class="fa fa-money"></i>
                             </span>
-                            <h4>Dates</h4>
+                            <h4>Prix</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>Jeudi 15 juin 2023</p>
-                            <p>Vendredi 16 juin 2023</p>
+                            <h6>Inscription avant le 20 mai</h6>
+                            <p>Adhérent : 300 000 FCFA</p>
+                            <p>Externe : 430 000 FCFA</p>
+
+                            <h6>Inscription après le 20 mai</h6>
+                            <p>Adhérent : 370 000 FCFA</p>
+                            <p>Externe : 500 000 FCFA</p>
+
+                            <h6>Participation au Gala</h6>
+                            <p>100 000 FCFA</p>
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
