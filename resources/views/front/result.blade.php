@@ -27,6 +27,18 @@
                     </div>
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
+                            <span class="tz_contact_meet_icon">
+                                <i class="fa fa-clock-o"></i>
+                            </span>
+                            <h4>Dates</h4>
+                        </div>
+                        <div class="tz_meetup_contact_detail">
+                            <p>Jeudi 15 juin 2023</p>
+                            <p>Vendredi 16 juin 2023</p>
+                        </div>
+                    </div>
+                    <div class="tz_contact_meet_2">
+                        <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_1">
                                 <i class="fa fa-map-marker"></i>
                             </span>
@@ -86,7 +98,7 @@
                                             <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
                                                 <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> Genre : {{$registration->sexe}} </p>
+                                                <p class="tz_list_item_content"> Genre : {{$registration->sexe == "F" : "Femme" ? "Homme"}} </p>
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
@@ -102,21 +114,21 @@
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list">
-                                                <i class="fa fa-times"></i>
+                                                <i class="fa fa-check-square-o"></i>
                                             </span>
                                                 <p class="tz_list_item_content"> Pays de provenance : {{$registration->country}}</p>
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list">
-                                                <i class="fa fa-times"></i>
+                                                <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> N° Adhérant : {{$registration->number_adherant}}</p>
+                                                <p class="tz_list_item_content"> N° Adhérant : {{$registration->adherant  == 1 : $registration->number_adherant ? "Pas adhérant"}}</p>
                                         </li>
                                         <li>
                                             <span class="tz_icon_maniva_list">
-                                                <i class="fa fa-times"></i>
+                                                <i class="fa fa-check-square-o"></i>
                                             </span>
-                                                <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala}} </p>
+                                                <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala == 1 : "Oui" ? "Non"}} </p>
                                         </li>
                                     </ul>
                                 </div>
