@@ -21,9 +21,8 @@
                             <h4>Dates</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>Monday-Friday: 8:00AM-05PM</p>
-                            <p>Saturday: 09:00AM-01:00PM</p>
-                            <p>Sunday: Holiday</p>
+                            <p>Jeudi 15 juin 2023</p>
+                            <p>Vendredi 16 juin 2023</p>
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
@@ -31,12 +30,11 @@
                             <span class="tz_contact_meet_icon tz_contact_meet_icon_bk_1">
                                 <i class="fa fa-map-marker"></i>
                             </span>
-                            <h4>Salles</h4>
+                            <h4>Salle</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>Semona Web Technologies</p>
-                            <p>9315 Circle Drive Street,</p>
-                            <p>Santa Cruz, CA 95060, USA</p>
+                            <p>ANPI, Centre-ville</p>
+                            <p>Libreville, Gabon</p>
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
@@ -47,8 +45,8 @@
                             <h4> Plus d'infos </h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>info@templaza.com</p>
-                            <p>+1-202-555-0105 – 120</p>
+                            <p>contact@conferenceiiagabon.ga/</p>
+                            <p>+241 74 01 02 03</p>
 
                         </div>
                     </div>
