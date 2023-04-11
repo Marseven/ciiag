@@ -73,6 +73,8 @@
 
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    @include('layouts.flash')
+
                     <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}" name="form_reg" >
                         @csrf
                         <div class="tz_meetup_wpcf7-form">
