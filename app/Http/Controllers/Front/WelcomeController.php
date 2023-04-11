@@ -116,6 +116,9 @@ class WelcomeController extends BasicController
             }else{
                 $eb_amount = 500000;
             }
+            if($registration->gala == 1){
+                $eb_amount += 100000;
+            }
             $eb_shortdescription = "Paiement de l'inscription Pour l'IIAG ";
             $eb_reference = WelcomeController::str_reference(10);
             $eb_email = $registration->email;
