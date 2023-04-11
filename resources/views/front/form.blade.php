@@ -65,7 +65,7 @@
                             <h4> Plus d'infos </h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>contact@conferenceiiagabon.ga/</p>
+                            <p>contact@conferenceiiagabon.ga</p>
                             <p>+241 74 01 02 03</p>
 
                         </div>

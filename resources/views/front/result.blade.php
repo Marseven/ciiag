@@ -65,7 +65,7 @@
                             <h4> Plus d'infos </h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>contact@conferenceiiagabon.ga/</p>
+                            <p>contact@conferenceiiagabon.ga</p>
                             <p>+241 74 01 02 03</p>
 
                         </div>
@@ -86,15 +86,11 @@
                                 </div>
                             <span class="tz_meetup_video_sub_title">
                                 <i class="fa fa-clock-o tz_icon_position_left"></i>
-                                February 24, 2016 – Billet Adhérent
+                                15-16 Juin 2023 – Billet Adhérent
                                 <span class="tz_meetup_video_sub_title_line"></span>
                             </span>
                                 <div class="tz_meetup_content">
-                                    <p>
-                                    <span>
-                                        Join us on February 24, 2016 for our FREE one-day virtual event dedicated to content marketing technology. ContentTECH 2016 will feature 6 technology-focused webinars:
-                                    </span>
-                                    </p>
+
                                     <ul class="tz-plazart-list">
                                         <li>
                                     <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
