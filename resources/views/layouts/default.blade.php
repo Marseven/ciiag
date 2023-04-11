@@ -80,8 +80,22 @@
                         <nav class="nav-collapse pull-right tz-menu">
                             <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
                                 <li><a href="https://conferenceiiagabon.ga/">Accueil</a></li>
-                                <li><a href="#">IIA Gabon</a></li>
-                                <li><a href="#">Services Utiles</a></li>
+                                <li><a href="https://conferenceiiagabon.ga/a-propos/">IIA Gabon</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Services Utiles</a>
+                                    <ul class="sub-menu non_mega_menu">
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/liste-des-hotels/">Hôtels</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/#">Restaurants</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/#">Transport</a>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li><a href="#">Formalités</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
