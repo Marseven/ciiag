@@ -125,9 +125,7 @@
 
         <!-- footer start -->
         <footer class="tz-footer tz-footer-type1">
-            <div class="tz-backtotop">
-                <img src="images/back_top_meetup.png" alt="back_top">
-            </div>
+
             <aside class="MultiColorSubscribeWidget widget">
                 <h3 class="module-title">
                     <span>CONFERENCE IIA-GABON</span>

@@ -53,24 +53,22 @@
 
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}">
+                    <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}" name="form_reg" >
                         @csrf
                         <div class="tz_meetup_wpcf7-form">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>
-                                        <span class="wpcf7-form-control-wrap">
+
                                             <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
-                                        </span>
-                                        <i class="fa fa-user"></i>
+
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
                                     <p>
-                                        <span class="wpcf7-form-control-wrap">
+
                                             <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
-                                        </span>
-                                        <i class="fa fa-user"></i>
+
                                     </p>
                                 </div>
                             </div>
@@ -81,45 +79,41 @@
                                         <option value="H">Homme</option>
                                         <option value="F">Femme</option>
                                     </select>
-                                        <i class="fa fa-sort-desc"></i>
+                                    </p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>
+
+                                        <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
+
+
                                     </p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>
-                                        <span class="wpcf7-form-control-wrap">
+
                                             <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
-                                        </span>
-                                        <i class="fa fa-phone"></i>
+
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
                                     <p>
-                                        <span class="wpcf7-form-control-wrap">
+
                                             <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
-                                        </span>
-                                        <i class="fa fa-phone"></i>
+
                                     </p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <p>
-                                        <span class="wpcf7-form-control-wrap">
-                                            <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
-                                        </span>
-                                        <i class="fa fa-envelope-o"></i>
 
-                                    </p>
-                                </div>
 
                                 <div class="col-lg-6">
                                     <p>
-                                        <span class="wpcf7-form-control-wrap">
+
                                             <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
-                                        </span>
-                                        <i class="fa fa-map-marker"></i>
+
                                     </p>
                                 </div>
 
@@ -129,26 +123,34 @@
                             <div class="row">
 
                                 <div class="col-lg-6">
-                                    <h6>Statut IIA 2023</h6>
-                                    <p>
-                                        Adhérent <br>
-                                        <input class="form-control" type="radio" value="1" name="adherant"> Oui
-                                        <input class="form-control" type="radio" value="0" name="adherant"> Non
-                                    </p>
-                                    <p>
-                                        <span class="wpcf7-form-control-wrap">
+                                    <h6>Statut IIA 2023  : Adhérent</h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Oui</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
+                                        <label class="form-check-label" for="inlineCheckbox2">Non</label>
+                                    </div>
+                                    <p id="adherant" style="display:none">
+
                                             <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
-                                        </span>
-                                        <i class="fa fa-number"></i>
+
                                     </p>
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <p>
-                                        Participation au Gala : <br>
-                                        <input class="form-control" type="radio" value="1" name="gala"> Oui
-                                        <input class="form-control" type="radio" value="0" name="gala"> Non
-                                    </p>
+                                    <h6>
+                                        Participation au Gala :
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox1" value="1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Oui</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
+                                        <label class="form-check-label" for="inlineCheckbox2">Non</label>
+                                    </div>
                                 </div>
                             </div>
 
@@ -168,4 +170,15 @@
 @endsection
 
 @push('scripts')
+<script language="JavaScript">
+    function afficherPiece() {
+            var adherant = document.getElementById("adherant");
+
+            if (document.form_reg.adherant.value == 1) {
+                adherant.style.display = "block";
+            } else {
+                adherant.style.display = "none";
+            }
+        }
+</script>
 @endpush
