@@ -230,7 +230,7 @@
                             <h4>Salle</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p>ANPI, Centre-ville</p>
+                            <p>Hôtel NOMAD</p>
                             <p>Libreville, Gabon</p>
                         </div>
                     </div>
