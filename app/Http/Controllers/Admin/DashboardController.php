@@ -23,7 +23,7 @@ class DashboardController extends BasicController
         );
     }
 
-    public function  ajaxRegistration(Request $request)
+    public function  ajaxRegistrations(Request $request)
     {
         ## Read value
         $draw = $request->get('draw');
