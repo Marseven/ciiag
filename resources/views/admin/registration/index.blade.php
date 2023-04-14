@@ -41,7 +41,6 @@
 
                             <h4 class="card-title">Inscriptions</h4>
                             <p class="card-title-desc">...</p>
-
                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
@@ -118,7 +117,7 @@
 @push('scripts')
      <!-- Required datatable js -->
         <script src="{{ asset('admin/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
         <!-- Buttons examples -->
         <script src="{{ asset('admin/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
         <script src="{{ asset('admin/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
@@ -134,17 +133,18 @@
         <script src="{{ asset('admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
         <!-- Datatable init js -->
-        <script src="{{ asset('admin/js/pages/datatables.init.js') }}"></script>
 
 
     <!--end::Page Vendors-->
 
     <script>
         $(document).ready(function() {
-            $('#datatable-buttons').DataTable({
+            $('#datatable_buttons').DataTable({
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/1.10.25/i18n/French.json"
                 },
+                lengthChange:!1,
+                buttons:["copy","excel","pdf","colvis"],
                 order: [
                     [6, "desc"]
                 ],
