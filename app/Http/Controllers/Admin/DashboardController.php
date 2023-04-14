@@ -42,14 +42,14 @@ class DashboardController extends BasicController
 
         // Total records
         $totalRecords = Registration::select('count(*) as allcount')->count();
-        $totalRecordswithFilter = Registration::select('count(*) as allcount')->where('name', 'like', '%' . $searchValue . '%')->orWhere('entreprises.email', 'like', '%' . $searchValue . '%')->orWhere('entreprises.phone', 'like', '%' . $searchValue . '%')->count();
+        $totalRecordswithFilter = Registration::select('count(*) as allcount')->where('lastname', 'like', '%' . $searchValue . '%')->orWhere('registrations.email', 'like', '%' . $searchValue . '%')->orWhere('registrations.phone_fixe', 'like', '%' . $searchValue . '%')->count();
 
         // Fetch records
         $records = Registration::orderBy($columnName, $columnSortOrder)
-            ->where('entreprises.name', 'like', '%' . $searchValue . '%')
-            ->orWhere('entreprises.email', 'like', '%' . $searchValue . '%')
-            ->orWhere('entreprises.phone', 'like', '%' . $searchValue . '%')
-            ->select('entreprises.*')
+            ->where('registrations.lastname', 'like', '%' . $searchValue . '%')
+            ->orWhere('registrations.email', 'like', '%' . $searchValue . '%')
+            ->orWhere('registrations.phone_fixe', 'like', '%' . $searchValue . '%')
+            ->select('registrations.*')
             ->skip($start)
             ->take($rowperpage)
             ->get();
@@ -58,36 +58,37 @@ class DashboardController extends BasicController
 
         foreach ($records as $record) {
 
-            $record->load(['manager']);
+            $record->load(['payment']);
 
             $id = $record->id;
 
-            $name = $record->name;
+            $name = $record->firstname.' '.$record->lastname;
             $email = $record->email;
-            $phone = $record->phone;
-            $adress = $record->adress;
-            $manager = $record->manager != null ? $record->manager->lastname . ' ' . $record->manager->firstname : 'Personne';
-
-            $status = BasicController::status($record->status);
-            $status = '<span class="status-btn ' . $status['type'] . '-btn">' . $status['message'] . '</span>';
-
-            $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
-            data-id="' . $record->id . '"
-            data-bs-target="#cardModalView' . $record->id . '">
-            <i class="lni lni-eye"></i>
-          </button>';
+            $gender = $record->gender == "H" ?  'Homme' : 'Femme';
+            $phone = $record->phone_fixe.' / '.$record->phone_mobile;
+            $country = $record->country;
+            $adherant = $record->adherant == 1 ?  'Adhérent N° : ' . $record->number_adherant : 'Externe';
+            $gala = $record->gala == 1 ?  'Oui' : 'Non';
 
 
-            $actions .= '<button style="margin:10px;" class="m-10 text-warning text-xl modal_edit_action" data-bs-toggle="modal"
-            data-id="' . $record->id . '"
-            data-bs-target="#cardModal' . $record->id . '">
-            <i class="lni lni-pencil"></i>
-          </button>
-          <button style="margin:10px;" class="m-10 text-danger text-xl modal_delete_action" data-bs-toggle="modal"
-            data-id="' . $record->id . '"
-            data-bs-target="#cardModalCenter' . $record->id . '">
-            <i class="lni lni-trash-can"></i>
-          </button>';
+
+        //     $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
+        //     data-id="' . $record->id . '"
+        //     data-bs-target="#cardModalView' . $record->id . '">
+        //     <i class="lni lni-eye"></i>
+        //   </button>';
+
+
+        //     $actions .= '<button style="margin:10px;" class="m-10 text-warning text-xl modal_edit_action" data-bs-toggle="modal"
+        //     data-id="' . $record->id . '"
+        //     data-bs-target="#cardModal' . $record->id . '">
+        //     <i class="lni lni-pencil"></i>
+        //   </button>
+        //   <button style="margin:10px;" class="m-10 text-danger text-xl modal_delete_action" data-bs-toggle="modal"
+        //     data-id="' . $record->id . '"
+        //     data-bs-target="#cardModalCenter' . $record->id . '">
+        //     <i class="lni lni-trash-can"></i>
+        //   </button>';
 
 
 
@@ -97,10 +98,10 @@ class DashboardController extends BasicController
                 "name" => $name,
                 "email" => $email,
                 "phone" => $phone,
-                "adress" => $adress,
-                "manager" => $manager,
-                "status" => $status,
-                "actions" => $actions,
+                "gender" => $gender,
+                "country" => $country,
+                "adherant" => $adherant,
+                "gala" => $gala,
             );
         }
 
