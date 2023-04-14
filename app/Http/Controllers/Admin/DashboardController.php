@@ -71,7 +71,7 @@ class DashboardController extends BasicController
             $gala = $record->gala == 1 ?  'Oui' : 'Non';
 
             $status = BasicController::status($record->status);
-            $status = '<span class="status-btn ' . $status['type'] . '-btn">' . $status['message'] . '</span>';
+            $status = '<span class="badge badge-pill badge-soft-' . $status['type'] . ' font-size-12">' . $status['message'] . '</span>';
 
 
 
