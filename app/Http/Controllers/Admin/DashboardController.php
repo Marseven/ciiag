@@ -70,6 +70,9 @@ class DashboardController extends BasicController
             $adherant = $record->adherant == 1 ?  'Adhérent N° : ' . $record->number_adherant : 'Externe';
             $gala = $record->gala == 1 ?  'Oui' : 'Non';
 
+            $status = BasicController::status($record->status);
+            $status = '<span class="status-btn ' . $status['type'] . '-btn">' . $status['message'] . '</span>';
+
 
 
         //     $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
@@ -102,6 +105,7 @@ class DashboardController extends BasicController
                 "country" => $country,
                 "adherant" => $adherant,
                 "gala" => $gala,
+                "status" => $status,
             );
         }
 

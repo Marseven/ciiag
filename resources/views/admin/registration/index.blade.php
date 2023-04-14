@@ -38,9 +38,6 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
-                            <h4 class="card-title">Inscriptions</h4>
-                            <p class="card-title-desc">...</p>
                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
@@ -52,6 +49,7 @@
                                         <th>Pays d'origine</th>
                                         <th>Statut</th>
                                         <th>Gala</th>
+                                        <th>Paiement</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,6 +172,9 @@
                     },
                     {
                         data: 'gala'
+                    },
+                    {
+                        data: 'status'
                     },
                 ]
             });
