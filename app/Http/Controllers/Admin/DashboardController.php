@@ -64,7 +64,7 @@ class DashboardController extends BasicController
 
             $name = $record->firstname.' '.$record->lastname;
             $email = $record->email;
-            $gender = $record->gender == "H" ?  'Homme' : 'Femme';
+            $gender = $record->sexe == "H" ?  'Homme' : 'Femme';
             $phone = $record->phone_fixe.' / '.$record->phone_mobile;
             $country = $record->country;
             $adherant = $record->adherant == 1 ?  'Adhérent N° : ' . $record->number_adherant : 'Externe';
