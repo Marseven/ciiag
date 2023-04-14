@@ -150,7 +150,7 @@
                 ],
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin-ajax-entreprises') }}",
+                ajax: "{{ route('admin-ajax-registrations') }}",
                 columns: [{
                         data: 'id'
                     },
@@ -188,7 +188,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-entreprise') }}",
+                url: "{{ route('admin-ajax-registration') }}",
                 dataType: 'json',
                 data: {
                     "id": id,
@@ -217,7 +217,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-entreprise') }}",
+                url: "{{ route('admin-ajax-registration') }}",
                 dataType: 'json',
                 data: {
                     "id": id,
@@ -243,7 +243,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-entreprise') }}",
+                url: "{{ route('admin-ajax-registration') }}",
                 dataType: 'json',
                 data: {
                     "id": id,
