@@ -54,7 +54,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium">Nombre d'incriptions Payées</p>
-                                        <h4 class="mb-0">1,235</h4>
+                                        <h4 class="mb-0">{{$nb_reg_pay}}</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">
@@ -74,7 +74,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium">Chiffre d'Affaire</p>
-                                        <h4 class="mb-0">$35, 723</h4>
+                                        <h4 class="mb-0">{{$ca}} FCFA</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center ">
@@ -94,7 +94,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted fw-medium">Nombre d'incription</p>
-                                        <h4 class="mb-0">$16.2</h4>
+                                        <h4 class="mb-0">{{$nb_reg}}</h4>
                                     </div>
 
                                     <div class="flex-shrink-0 align-self-center">

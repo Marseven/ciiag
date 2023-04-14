@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BasicController;
+use App\Models\Payment;
 use App\Models\Registration;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,15 @@ class DashboardController extends BasicController
     //
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $nb_reg_pay = Registration::where('status', STATUT_PAID)->count();
+        $nb_reg = Registration::all()->count();
+        $ca = Payment::where('status', STATUT_PAID)->sum('amount');
+
+        return view('admin.dashboard',[
+            'nb_reg_pay' => $nb_reg_pay,
+            'nb_reg' => $nb_reg,
+            'ca' => $ca,
+        ]);
     }
 
     public function index(){
