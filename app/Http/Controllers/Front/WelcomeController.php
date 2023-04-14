@@ -225,12 +225,7 @@ class WelcomeController extends BasicController
             $registration->status = STATUT_FAILED;
             $registration->save();
             return view(
-                'front.result',
-                [
-                    'registration' => $registration,
-                    'payment' => $payment,
-                    'user' => Auth::user(),
-                ]
+                'front.form',
             )->with('warning', "Votre paiement n'a pas été reçu.");
         }
 
