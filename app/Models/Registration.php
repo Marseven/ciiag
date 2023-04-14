@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Registration extends Model
 {
     use HasFactory;
+
+    public function payment()
+    {
+        return $this->hasMany(Payment::class, 'registration_id');
+    }
 }
