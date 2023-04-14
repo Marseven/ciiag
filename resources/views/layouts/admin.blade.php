@@ -123,7 +123,7 @@
 
                         <li>
                             <a href="{{ url('/admin/list-registrations') }}" class="waves-effect">
-                                <i class="bx bx-list"></i>
+                                <i class="bx bxs-user-detail"></i>
                                 <span key="t-command">Liste</span>
                             </a>
                         </li>
