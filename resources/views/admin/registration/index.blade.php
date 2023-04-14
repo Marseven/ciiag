@@ -144,7 +144,7 @@
                 lengthChange:!1,
                 buttons:["copy","excel","pdf","colvis"],
                 order: [
-                    [6, "desc"]
+                    [0, "desc"]
                 ],
                 processing: true,
                 serverSide: true,
