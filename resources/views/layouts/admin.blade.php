@@ -80,16 +80,16 @@
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="{{ asset('admin/images/users/avatar-1.jpg') }}"
+                            <img class="rounded-circle header-profile-user" src="{{ asset('admin/images/users/avatar.jpg') }}"
                                 alt="LU">
                             <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ $user->lastname }}</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <a class="dropdown-item" href="{{ url('/admin/admin-profil') }}"><i
+                            {{-- <a class="dropdown-item" href="{{ url('/admin/admin-profil') }}"><i
                                     class="bx bx-user font-size-16 align-middle me-1"></i>
-                                <span key="t-profile">Profil</span></a>
+                                <span key="t-profile">Profil</span></a> --}}
                             <a class="dropdown-item" href="{{ url('/') }}"><i
                                     class="bx bx-home-circle font-size-16 align-middle me-1"></i>
                                 <span key="t-profile">Espace Front</span></a>
