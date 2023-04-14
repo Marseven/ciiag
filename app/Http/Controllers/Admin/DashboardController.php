@@ -19,7 +19,7 @@ class DashboardController extends BasicController
 
     public function index(){
         return view(
-            'admin.registration.list'
+            'admin.registration.index'
         );
     }
 
