@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('adherant');
             $table->string('number_adherant')->nullable();
             $table->string('gala');
+            $table->string('atelier_j1_a1');
+            $table->string('atelier_j1_a2');
+            $table->string('atelier_j2_a1');
+            $table->string('atelier_j2_a2');
             $table->string('status');
             $table->timestamps();
         });

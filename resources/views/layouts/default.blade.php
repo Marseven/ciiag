@@ -142,7 +142,7 @@
 
             <aside class="MultiColorSubscribeWidget widget">
                 <h3 class="module-title">
-                    <span>CONFERENCE IIA-GABON</span>
+                    <span>Restez informer..!</span>
                 </h3>
                 <div class="multicolor-subscribe">
                     <div class="max-email-box">

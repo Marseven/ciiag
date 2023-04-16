@@ -12,9 +12,8 @@
     <div class="tz_contact_icon_form">
         <div class="container">
             <div class="row">
+                @include('layouts.flash')
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-
-                    @include('layouts.flash')
 
                     @if ($registration)
                     <div class="tz_width_column tz_text_box_slider_padding">
@@ -73,6 +72,28 @@
                                                 <i class="fa fa-check-square-o"></i>
                                             </span>
                                                 <p class="tz_list_item_content"> Participation au Gala : {{$registration->gala == 1 ? "Oui" : "Non"}} </p>
+                                        </li>
+
+                                        <li>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Jour 1 : </p>
+                                                <ul>
+                                                    <li>{{$registration->atelierj1->label}}</li>
+                                                    <li>{{$registration->atelierj2->label}}</li>
+                                                </ul>
+                                        </li>
+
+                                        <li>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                <p class="tz_list_item_content"> Jour 2 : </p>
+                                                <ul>
+                                                    <li>{{$registration->atelierj3->label}}</li>
+                                                    <li>{{$registration->atelierj4->label}}</li>
+                                                </ul>
                                         </li>
                                     </ul>
                                 </div>
@@ -155,28 +176,114 @@
                                 </div>
 
                                 <div class="row">
-
                                     <div class="col-lg-6">
-                                        <h6>Statut IIA 2023</h6>
-                                        <p>
-                                            Adhérent <br>
-                                            <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="adherant"> Oui
-                                            <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="adherant"> Non
-                                        </p>
-                                        <p>
-                                            <span class="wpcf7-form-control-wrap">
-                                                <input class="wpcf7-form-control wpcf7-text" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
-                                            </span>
-                                            <i class="fa fa-number"></i>
+                                        <h5>Statut IIA 2023  : Adhérent</h5>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Oui</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
+                                            <label class="form-check-label" for="inlineCheckbox2">Non</label>
+                                        </div>
+                                        <p id="adherant" style="display:none">
+
+                                                <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
+
                                         </p>
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <p>
-                                            Participation au Gala : <br>
-                                            <input class="wpcf7-form-control wpcf7-text" type="radio" value="1" name="gala"> Oui
-                                            <input class="wpcf7-form-control wpcf7-text" type="radio" value="0" name="gala"> Non
-                                        </p>
+                                        <h5>
+                                            Participation au Gala :
+                                        </h5>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox1" value="1">
+                                            <label class="form-check-label" >Oui</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
+                                            <label class="form-check-label" >Non</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5>Jeudi 15 juin 2023</h5>
+                                        <h6>Atelier 1</h6>
+                                        <div class="form-check form-check-inline">
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input" name="atelier_j1_a1" type="radio"  value="1"> A1 - Les trois lignes de maitrise: Quelle compréhension
+                                                pour les organisations afin d'une meilleure application
+                                                dans un contexte économique en constante évolution ?</label>
+                                        </div>
+                                        <br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input" name="atelier_j1_a1" type="radio"  value="2" > A2 - Les interactions entre la conformité et l'audit interne
+                                                dans le secteur bancaire</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a1" type="radio"  value="3" > A3 - Le contrôle interne dans le secteur public: un outil
+                                                indispensable pour le renforcement de l'intégrité, la
+                                                transparence et la reddition des comptes</label>
+                                        </div><br>
+                                        <h6>Atelier 2</h6>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="4"> A4 - L'audit interne dans les assurances: les principaux
+                                                facteurs de développement de la fonction</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="5" > A5 - Le renforcement du professionalisme: un atout majeur
+                                                pour le devenir de l'Auditeur interne</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="6" > A6 - Les technologies innovantes: Quel challenge pour le
+                                                devenir de l'Audit Interne ?</label>
+                                        </div><br>
+
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h5>Vendredi 16 juin 2023</h5>
+                                        <h6>Atelier 1</h6>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="7"> A7 - L'audit interne, le controle interne, et l'inspection:
+                                                comment organiser les activités pour optimiser le travail
+                                                des services d'inspection dans l'administration publique ?</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="8" > A8 - Les trois délis (Fraude-corruption-blanchiement):
+                                                quels dispositifs de lutte efficace pour les organisations ?</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" >  <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="9" > A9 - Evaluation qualité de l'audit interne: pour une
+                                                amélioration continu et une crédibilté accrue</label>
+                                        </div><br>
+                                        <h6>Atelier 2</h6>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="10"> A10 - L'art de la bonne communication pour convaincre et
+                                                agir</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="11" > A11 - L'audit à distance: les impacts sur la réalisation des
+                                                missions</label>
+                                        </div><br>
+                                        <div class="form-check form-check-inline">
+
+                                            <label  style="font-weight: 400"class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="12" > A12 - La mise en oeuvre et le suivi des recommandations:
+                                                quelle responsabilté pour le management et quelle
+                                                responsabilité pour l'audit interne ?</label>
+                                        </div><br>
                                     </div>
                                 </div>
 

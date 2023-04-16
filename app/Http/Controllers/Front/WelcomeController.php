@@ -44,6 +44,11 @@ class WelcomeController extends BasicController
         $registration->number_adherant = $request->number_adherant;
         $registration->gala = $request->gala;
 
+        $registration->atelier_j1_a1 = $request->atelier_j1_a1;
+        $registration->atelier_j1_a2 = $request->atelier_j1_a2;
+        $registration->atelier_j2_a1 = $request->atelier_j2_a1;
+        $registration->atelier_j2_a2 = $request->atelier_j2_a2;
+
         $registration->status = STATUT_RECEIVE;
 
         if ($registration->save()){
@@ -212,7 +217,10 @@ class WelcomeController extends BasicController
         $registration = Registration::find($entity);
 
         $payment = Payment::where('registration_id', $registration->id)->first();
+
         if ($payment->status == STATUT_PAID) {
+            $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+            //dd($registration);
             return view(
                 'front.result',
                 [
