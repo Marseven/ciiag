@@ -84,25 +84,19 @@ class DashboardController extends BasicController
 
 
 
-        //     $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
-        //     data-id="' . $record->id . '"
-        //     data-bs-target="#cardModalView' . $record->id . '">
-        //     <i class="lni lni-eye"></i>
-        //   </button>';
+            $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
+            data-id="' . $record->id . '"
+            data-bs-target="#cardModalView' . $record->id . '">
+            <i class="lni lni-eye"></i>
+          </button>';
 
 
-        //     $actions .= '<button style="margin:10px;" class="m-10 text-warning text-xl modal_edit_action" data-bs-toggle="modal"
-        //     data-id="' . $record->id . '"
-        //     data-bs-target="#cardModal' . $record->id . '">
-        //     <i class="lni lni-pencil"></i>
-        //   </button>
-        //   <button style="margin:10px;" class="m-10 text-danger text-xl modal_delete_action" data-bs-toggle="modal"
-        //     data-id="' . $record->id . '"
-        //     data-bs-target="#cardModalCenter' . $record->id . '">
-        //     <i class="lni lni-trash-can"></i>
-        //   </button>';
-
-
+            $actions .= '
+          <button style="margin:10px;" class="m-10 text-danger text-xl modal_delete_action" data-bs-toggle="modal"
+            data-id="' . $record->id . '"
+            data-bs-target="#cardModalCenter' . $record->id . '">
+            <i class="lni lni-trash-can"></i>
+          </button>';
 
 
             $data_arr[] = array(
@@ -115,6 +109,7 @@ class DashboardController extends BasicController
                 "adherant" => $adherant,
                 "gala" => $gala,
                 "status" => $status,
+                "actions" => $actions,
             );
         }
 
@@ -133,130 +128,84 @@ class DashboardController extends BasicController
     //
     public function  getRegistration(Request $request)
     {
-        $entreprise = Registration::find($request->id);
+        $registration = Registration::find($request->id);
 
         $title = "";
         $body = "";
 
         if ($request->action == "view") {
-            $entreprise->load(['user', 'manager']);
-            $status = BasicController::status($entreprise->status);
-
-            $manager = $entreprise->manager != null ? $entreprise->manager->lastname . ' ' . $entreprise->manager->firstname : 'Personne';
+            $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+            $status = BasicController::status($registration->status);
 
             //dd($entreprise);
 
-            $title = "Entreprise N° " . $entreprise->id;
+            $title = "Inscription N° " . $registration->id;
             $body = '<div class="row">
                 <div class="col-12 mb-5">
                     <h6 class="mb-0">Nom </h6>
-                    <p class="mb-0">' . $entreprise->name . '</p>
+                    <p class="mb-0">' . $registration->firstname . ' '.$registration->lastname.'</p>
+                </div>
+                <div class="col-6 mb-5">
+                    <h6 class="mb-0">Genre
+                    </h6>
+                    <p class="mb-0">' . $registration->sexe == "F" ? "Femme" : "Homme" . '</p>
+                </div>
+                <div class="col-6 mb-5">
+                    <h6 class="mb-0">Téléphone Fixe
+                    </h6>
+                    <p class="mb-0">' . $registration->phone . '</p>
+                </div>
+                <div class="col-6 mb-5">
+                    <h6 class="mb-0">Téléphone Mobile
+                    </h6>
+                    <p class="mb-0">' . $registration->phone . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Email
                     </h6>
-                    <p class="mb-0">' . $entreprise->email . '</p>
+                    <p class="mb-0">' . $registration->email . '</p>
+                </div>
+
+                <div class="col-6 mb-5">
+                    <h6 class="mb-0">Pays d\'Origine </h6>
+                    <p class="mb-0">' . $registration->country . ' XAF</p>
                 </div>
                 <div class="col-6 mb-5">
-                    <h6 class="mb-0">Téléphone
+                    <h6 class="mb-0">Adhérent
                     </h6>
-                    <p class="mb-0">' . $entreprise->phone . '</p>
+                    <p class="mb-0">' . $registration->adherant == 1 ? $registration->number_adherant : "Externe" . '</p>
                 </div>
                 <div class="col-6 mb-5">
-                    <h6 class="mb-0">Adresse </h6>
-                    <p class="mb-0">' . $entreprise->adress . ' XAF</p>
+                    <h6 class="mb-0">Gala
+                    </h6>
+                    <p class="mb-0">' . $registration->gala == 1 ? "Oui" : "Non" . '</p>
                 </div>
                 <div class="col-6 mb-5">
-                    <h6 class="mb-0">Gérant </h6>
-                    <p class="mb-0">' . $manager . '</p>
+                    <h6 class="mb-0">Jour 1
+                    </h6>
+                    <p class="mb-0">' . $registration->atelierj1->label  . '</p>
+                    <p class="mb-0">' . $registration->atelierj2->label  . '</p>
                 </div>
+                <div class="col-6 mb-5">
+                    <h6 class="mb-0">Jour 2
+                    </h6>
+                    <p class="mb-0">' . $registration->atelierj3->label  . '</p>
+                    <p class="mb-0">' . $registration->atelierj4->label  . '</p>
+                </div>
+
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Statut</h6>
                     <p class="mb-0"><span class="status-btn ' . $status['type'] . '-btn">' . $status['message'] . '</span></p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Date de Création</h6>
-                    <p class="mb-0">' . $entreprise->created_at . '</p>
-                </div>
-                <div class="col-6 mb-5">
-                    <h6 class="mb-0">Créateur
-                    </h6>
-                    <p class="mb-0">' . $entreprise->user->lastname . '</p>
+                    <p class="mb-0">' . $registration->created_at . '</p>
                 </div>
             </div>';
 
-            //dd($body);
         } elseif ($request->action == "edit") {
 
-            $entreprise->load(['manager']);
-            $manager = $entreprise->manager != null ? $entreprise->manager->lastname . ' ' . $entreprise->manager->firstname : 'Personne';
-
-            $body = '<div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabelOne">Mettre à jour l\'entreprise</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                <i class="lni lni-close"></i>
-                </button>
-            </div>
-
-            <form action="' .  url('admin/entreprise/' . $request->id . '') . '" method="POST">
-                <div class="modal-body">
-                    <input type="hidden" name="_token" value="' . csrf_token() . '">
-
-                    <div class="input-style-3">
-                                    <input name="name" type="text" placeholder="Nom de l\'entreprise" value="' . $entreprise->name . '" />
-                                    <span class="icon"><i class="lni lni-linkedin"></i></span>
-                                </div>
-                                <!-- end input -->
-                                <!-- end input -->
-                                <div class="input-style-3">
-                                    <input name="email" type="text" placeholder="Email" value="' . $entreprise->email . '"  />
-                                    <span class="icon"><i class="lni lni-envelope"></i></span>
-                                </div>
-                                <!-- end input -->
-                                <!-- end input -->
-                                <div class="input-style-3">
-                                    <input name="phone" type="tel" placeholder="Téléphone" value="' . $entreprise->phone . '" />
-                                    <span class="icon"><i class="lni lni-phone"></i></span>
-                                </div>
-                                <!-- end input -->
-                                <!-- end input -->
-                                <div class="input-style-3">
-                                    <input name="adress" type="text" placeholder="Adresse" value="' . $entreprise->adress . '" />
-                                    <span class="icon"><i class="lni lni-map-marker"></i></span>
-                                </div>
-                                <!-- end input -->
-
-                                <!-- end input -->
-                                <div class="select-style-2">
-                                    <div class="select-position">
-                                        <select name="manager">
-                                            <option value="' . $entreprise->manager_id . '">' . $manager . '</option>
-                                            ';
-
-            $managers = User::where('security_role_id', '<=', 2)->get();
-            foreach ($managers as $manager)
-                $body .= '<option value="' . $manager->id . '">
-                                                    ' . $manager->lastname . ' ' . $manager->firstname . '</option>';
-
-            $body .= '</select>
-                                    </div>
-                                </div>
-                                <!-- end input -->
-
-                                <div class="select-style-2">
-                                    <div class="select-position">
-                                        <select name="status">
-                                        <option value="' . STATUT_ENABLE . '">Actif</option>
-                                         <option value="' . STATUT_DISABLE . '">Inactif</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- end input -->
-                </div>
-                <div class="modal-footer">
-                    <button style="background-color: #2b9753 !important;" type="submit" class="btn btn-success">Enregistrer</button>
-                </div>
-            </form>';
+            $body = '';
         } else {
 
             $body = '

@@ -50,6 +50,7 @@
                                         <th>Statut</th>
                                         <th>Gala</th>
                                         <th>Paiement</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -175,6 +176,9 @@
                     },
                     {
                         data: 'status'
+                    },
+                    {
+                        data: 'actions'
                     },
                 ]
             });
