@@ -137,28 +137,31 @@ class DashboardController extends BasicController
             $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
             $status = BasicController::status($registration->status);
 
+           if($registration->sexe == "F") {$gender =  "Femme";}else{ $gender =  "Homme";};
+           if($registration->adherant == 1) {$adherant =  $registration->number_adherant;}else {$adherant = "Externe";}
+           if($registration->gala == 1){ $gala =  "Oui";}else  {$gala = "Non";}
             //dd($entreprise);
 
             $title = "Inscription N° " . $registration->id;
             $body = '<div class="row">
                 <div class="col-12 mb-5">
                     <h6 class="mb-0">Nom </h6>
-                    <p class="mb-0">' . $registration->firstname . ' '.$registration->lastname.'</p>
+                    <p class="mb-0">' . $registration->firstname . ' ' . $registration->lastname . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Genre
                     </h6>
-                    <p class="mb-0">' . $registration->sexe == "F" ? "Femme" : "Homme" . '</p>
+                    <p class="mb-0">' . $gender  . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Téléphone Fixe
                     </h6>
-                    <p class="mb-0">' . $registration->phone . '</p>
+                    <p class="mb-0">' . $registration->phone_fixe . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Téléphone Mobile
                     </h6>
-                    <p class="mb-0">' . $registration->phone . '</p>
+                    <p class="mb-0">' . $registration->phone_mobile . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Email
@@ -173,12 +176,12 @@ class DashboardController extends BasicController
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Adhérent
                     </h6>
-                    <p class="mb-0">' . $registration->adherant == 1 ? $registration->number_adherant : "Externe" . '</p>
+                    <p class="mb-0">' . $adherant . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Gala
                     </h6>
-                    <p class="mb-0">' . $registration->gala == 1 ? "Oui" : "Non" . '</p>
+                    <p class="mb-0">' . $gala . '</p>
                 </div>
                 <div class="col-6 mb-5">
                     <h6 class="mb-0">Jour 1
