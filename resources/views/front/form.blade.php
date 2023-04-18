@@ -104,7 +104,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <h5>Jeudi 15 juin 2023</h5>
-                                    <h6>Atelier 1</h6>
+                                    <h6>Atelier 1 : 14h30 - 15h00</h6>
                                     <div class="form-check form-check-inline">
                                         <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input" name="atelier_j1_a1" type="radio"  value="1"> A1 - Les trois lignes de maitrise: Quelle compréhension
                                             pour les organisations afin d'une meilleure application
@@ -122,7 +122,7 @@
                                             indispensable pour le renforcement de l'intégrité, la
                                             transparence et la reddition des comptes</label>
                                     </div><br>
-                                    <h6>Atelier 2</h6>
+                                    <h6>Atelier 2 : 15h05 - 15h35</h6>
                                     <div class="form-check form-check-inline">
 
                                         <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="4"> A4 - L'audit interne dans les assurances: les principaux
@@ -143,7 +143,7 @@
 
                                 <div class="col-lg-6">
                                     <h5>Vendredi 16 juin 2023</h5>
-                                    <h6>Atelier 1</h6>
+                                    <h6>Atelier 1: 11h00 - 11h30</h6>
                                     <div class="form-check form-check-inline">
 
                                         <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="7"> A7 - L'audit interne, le controle interne, et l'inspection:
@@ -160,7 +160,7 @@
                                         <label style="font-weight: 400" class="form-check-label" >  <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="9" > A9 - Evaluation qualité de l'audit interne: pour une
                                             amélioration continu et une crédibilté accrue</label>
                                     </div><br>
-                                    <h6>Atelier 2</h6>
+                                    <h6>Atelier 2: 11h35 - 12h05</h6>
                                     <div class="form-check form-check-inline">
 
                                         <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="10"> A10 - L'art de la bonne communication pour convaincre et

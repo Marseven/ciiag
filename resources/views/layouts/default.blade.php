@@ -133,7 +133,7 @@
         </section>
         <!-- Breadcrumb end -->
 
-        @include('layouts.flash')
+        {{-- @include('layouts.flash') --}}
 
         @yield('content')
 
