@@ -195,16 +195,13 @@
                             <h4>Prix</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <h6>Inscription avant le 20 mai</h6>
-                            <p>Adhérent : 300 000 FCFA</p>
-                            <p>Externe : 430 000 FCFA</p>
+                            <h6>Inscription avant le 20 mai (Dîner de Gala)</h6>
+                            <p>Adhérent : 400 000 FCFA (300 000 FCFA)</p>
+                            <p>Externe : 530 000 FCFA (430 000 FCFA)</p>
 
                             <h6>Inscription après le 20 mai</h6>
-                            <p>Adhérent : 370 000 FCFA</p>
-                            <p>Externe : 500 000 FCFA</p>
-
-                            <h6>Participation au Gala</h6>
-                            <p>100 000 FCFA</p>
+                            <p>Adhérent : 470 000 FCFA (370 000 FCFA)</p>
+                            <p>Externe : 600 000 FCFA (550 000 FCFA)</p>
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
