@@ -20,10 +20,10 @@
                     <!-- Nav pills -->
                     <ul class="nav nav-pills">
                         <li class="nav-item active">
-                            <a class="nav-link active" data-toggle="pill" href="#particulier">Particulier</a>
+                            <a class="nav-link active" data-toggle="pill" href="#particulier" style="font-size: 2em; font-weight: 700;">Particulier</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#entreprise">Entreprise</a>
+                            <a class="nav-link" data-toggle="pill" href="#entreprise" style="font-size: 2em; font-weight: 700;">Entreprise</a>
                         </li>
                     </ul>
                     <br>
