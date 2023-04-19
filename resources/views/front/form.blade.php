@@ -16,7 +16,7 @@
 
                 @include('layouts.flash')
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
                     <!-- Nav pills -->
                     <ul class="nav nav-pills">
@@ -371,7 +371,7 @@
                     <!-- Tabs content -->
 
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon">
@@ -403,8 +403,8 @@
                                 </ul>
                                 <p>Externe : </p>
                                 <ul>
-                                    <li>600 000 FCFA</li>
-                                    <li>500 000 FCFA (Dîner Inclus)</li>
+                                    <li>500 000 FCFA</li>
+                                    <li>600 000 FCFA (Dîner Inclus)</li>
                                 </ul>
                                 </div>
                             </div>
