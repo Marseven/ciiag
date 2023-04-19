@@ -35,7 +35,7 @@
 
         <!-- Header start -->
         <header class="tz-headerHome tz-homeType2 tz-homeTypeRelative">
-            <div class="tz_meetup_header_option">
+            {{-- <div class="tz_meetup_header_option">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="tz-header-content">
                 <div class="container">
                     <div class="tzHeaderContainer">
