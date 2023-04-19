@@ -10,13 +10,13 @@
 
 
     <div class="tz_contact_icon_form">
-        <div class="container">
+        <div class="container" style="width: 95% !important;">
 
             <div class="row">
 
                 @include('layouts.flash')
 
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
                     <!-- Nav pills -->
                     <ul class="nav nav-pills">
@@ -371,7 +371,7 @@
                     <!-- Tabs content -->
 
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon">
@@ -380,28 +380,35 @@
                             <h4>Prix</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <h6>Inscription avant le 20 mai </h6>
-                            <p>Adhérent : </p>
-                            <ul>
-                                <li>- 300 000 FCFA</li>
-                                <li>- 400 000 FCFA (Dîner Inclus)</li>
-                            </ul>
-                            <p>Externe : </p>
-                            <ul>
-                                <li>- 430 000 FCFA</li>
-                                <li>- 530 000 FCFA (Dîner Inclus)</li>
-                            </ul>
-                            <h6>Inscription après le 20 mai</h6>
-                            <p>Adhérent : </p>
-                            <ul>
-                                <li>- 370 000 FCFA</li>
-                                <li>- 470 000 FCFA (Dîner Inclus)</li>
-                            </ul>
-                            <p>Externe : </p>
-                            <ul>
-                                <li>- 600 000 FCFA</li>
-                                <li>- 500 000 FCFA (Dîner Inclus)</li>
-                            </ul>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h6>Inscription avant le 20 mai </h6>
+                                <p>Adhérent : </p>
+                                <ul>
+                                    <li>300 000 FCFA</li>
+                                    <li>400 000 FCFA (Dîner Inclus)</li>
+                                </ul>
+                                <p>Externe : </p>
+                                <ul>
+                                    <li>430 000 FCFA</li>
+                                    <li>530 000 FCFA (Dîner Inclus)</li>
+                                </ul>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h6>Inscription après le 20 mai</h6>
+                                <p>Adhérent : </p>
+                                <ul>
+                                    <li>370 000 FCFA</li>
+                                    <li>470 000 FCFA (Dîner Inclus)</li>
+                                </ul>
+                                <p>Externe : </p>
+                                <ul>
+                                    <li>600 000 FCFA</li>
+                                    <li>500 000 FCFA (Dîner Inclus)</li>
+                                </ul>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
