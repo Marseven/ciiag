@@ -23,9 +23,9 @@
                         <li class="nav-item active">
                             <a class="nav-link active" data-toggle="pill" href="#particulier" style="font-size: 2em; font-weight: 700;">Particulier</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#entreprise" style="font-size: 2em; font-weight: 700;">Entreprise</a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <br>
                     <!-- Tab panes -->
@@ -201,7 +201,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="entreprise">
+                        {{-- <div class="tab-pane fade" id="entreprise">
                             <h1>Inscription Entreprise</h1>
 
                             <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}" name="form_reg" >
@@ -366,7 +366,7 @@
                                     </p>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- Tabs content -->
 
