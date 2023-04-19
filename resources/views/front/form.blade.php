@@ -218,7 +218,6 @@
                                                 <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone">
                                             </p>
                                         </div>
-
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -378,16 +377,31 @@
                             <span class="tz_contact_meet_icon">
                                 <i class="fa fa-money"></i>
                             </span>
-                            <h4>Prix (Sans Dîner de Gala)</h4>
+                            <h4>Prix</h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
                             <h6>Inscription avant le 20 mai </h6>
-                            <p>Adhérent : 400 000 FCFA (300 000 FCFA)</p>
-                            <p>Externe : 530 000 FCFA (430 000 FCFA)</p>
-
+                            <p>Adhérent : </p>
+                            <ul>
+                                <li>- 300 000 FCFA</li>
+                                <li>- 400 000 FCFA (Dîner Inclus)</li>
+                            </ul>
+                            <p>Externe : </p>
+                            <ul>
+                                <li>- 430 000 FCFA</li>
+                                <li>- 530 000 FCFA (Dîner Inclus)</li>
+                            </ul>
                             <h6>Inscription après le 20 mai</h6>
-                            <p>Adhérent : 470 000 FCFA (370 000 FCFA)</p>
-                            <p>Externe : 600 000 FCFA (500 000 FCFA)</p>
+                            <p>Adhérent : </p>
+                            <ul>
+                                <li>- 370 000 FCFA</li>
+                                <li>- 470 000 FCFA (Dîner Inclus)</li>
+                            </ul>
+                            <p>Externe : </p>
+                            <ul>
+                                <li>- 600 000 FCFA</li>
+                                <li>- 500 000 FCFA (Dîner Inclus)</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="tz_contact_meet_2">
@@ -422,7 +436,7 @@
                             <h4> Plus d'infos </h4>
                         </div>
                         <div class="tz_meetup_contact_detail">
-                            <p> info@conferenceiiagabon.ga</p>
+                            <p> contact@conferenceiiagabon.ga</p>
                             <p>+241 77 07 18 56</p>
 
                         </div>
