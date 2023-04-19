@@ -209,39 +209,25 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
+                                                <input class="form-control" type="text" placeholder="Nom de l'entreprise *" aria-invalid="false" aria-required="true" size="40" value="{{old('label')}}" name="label">
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
+                                                <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone">
                                             </p>
                                         </div>
+
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <p>
-                                            <select name="sexe" id="" class="form-control">
-                                                <option value="H">Homme</option>
-                                                <option value="F">Femme</option>
-                                            </select>
-                                            </p>
-                                        </div>
                                         <div class="col-lg-6">
                                             <p>
                                                 <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
                                             </p>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
+                                                <input class="form-control" type="text" placeholder="Adresse *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="adress">
                                             </p>
                                         </div>
                                     </div>
@@ -249,25 +235,6 @@
                                         <div class="col-lg-6">
                                             <p>
                                                 <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <h5>Statut IIA 2023  : Adhérent</h5>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
-                                                <label class="form-check-label" for="inlineCheckbox1">Oui</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
-                                                <label class="form-check-label" for="inlineCheckbox2">Non</label>
-                                            </div>
-                                            <p id="adherant" style="display:none">
-
-                                                    <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
-
                                             </p>
                                         </div>
 
@@ -285,6 +252,35 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
+                                    <div class="row">
+                                        <h4>Ajouter un participant <button type="button" class="btn btn-primary">+ Ajouter</button></h4>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <p>
+                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p>
+                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <p>
+                                            <select name="sexe" id="" class="form-control">
+                                                <option value="H">Homme</option>
+                                                <option value="F">Femme</option>
+                                            </select>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-6">
