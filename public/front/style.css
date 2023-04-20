@@ -543,7 +543,7 @@ html[xmlns] .slides {
     padding: 40px 0;
     font-size: 12px;
     font-weight: 600;
-    color: #ffffff;
+    color: #000;
     line-height: 1.4em;
     font-family: 'Raleway', sans-serif;
     display: block;
@@ -592,7 +592,7 @@ html[xmlns] .slides {
     bottom: 35%;
     left: 0;
     content: '';
-    background: #0a659b;
+    background: #99ca3c;
     height: 3px;
     width: 0;
     transition: all 0.3s linear 0s;
@@ -678,7 +678,7 @@ html[xmlns] .slides {
         visibility: hidden;
         margin: 0;
         padding: 0;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(255, 255, 255, 1);
         width: 220px;
         -webkit-transition: all 0.3s ease-in-out 0s;
         -moz-transition: all 0.3s ease-in-out 0s;
@@ -694,6 +694,7 @@ html[xmlns] .slides {
     }
     .tz-headerHome nav > ul > li > ul.non_mega_menu > li:first-child {
         border-top: 1px solid #0a659b;
+
     }
     .tz-headerHome nav > ul > li > ul.non_mega_menu > li {
         list-style: outside none none;
@@ -713,9 +714,14 @@ html[xmlns] .slides {
         transition: all 0.3s ease-in-out 0s;
     }
     .tz-headerHome nav ul li ul.non_mega_menu li a:hover {
-        color: #0a659b;
+        color: #FFF;
         text-decoration: none;
     }
+
+    .tz-headerHome nav ul li ul.non_mega_menu li:hover {
+        background-color: #99ca3c;
+    }
+
     .tz-headerHome nav > ul > li > ul.non_mega_menu > li > a:before {
         content: normal;
     }

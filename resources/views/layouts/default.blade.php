@@ -35,14 +35,21 @@
 
         <!-- Header start -->
         <header class="tz-headerHome tz-homeType2 tz-homeTypeRelative">
-            {{-- <div class="tz_meetup_header_option">
+            <div class="tz_meetup_header_option">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
-                                    <a class="tz_upcoming_event" title="meetup" href="#register"> Évènement à venir </a>
-                                    <p class="tz_description_event">IIA CONFERENCE INTERNATIONAL DU 15-16 JUIN 2023 </p>
+                                    <span>
+                                        <img src="https://conferenceiiagabon.ga/wp-content/themes/maniva-meetup/images/phone.png" alt="phone">
+                                    241077071856
+                                </span>
+
+                                <span>
+                                    <img src="https://conferenceiiagabon.ga/wp-content/themes/maniva-meetup/images/email_meetup.png" alt="email">
+                                    <a href="mailto:contact@conferenceiiagabon.ga">contact@conferenceiiagabon.ga</a>
+                                </span>
                                 </div>
                             </div>
                         </div>
@@ -50,22 +57,24 @@
                             <div class="tz-headerRight text-right">
                                 <ul>
                                     <li>
-                                        <span class="tz-search-header3">
-                                            <i class="fa fa-search"></i>
-                                        </span>
+                                        <a target="_blank" href="https://www.facebook.com/IIAGABON/"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/IIAGABON/"><i class="fa fa-linkedin"></i></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+
             <div class="tz-header-content">
                 <div class="container">
                     <div class="tzHeaderContainer">
                         <h3 class="pull-left tz_logo">
-                            <a title="Home" href="index-2.html">
-                                <img src="{{ asset('front/images/logo-iiag.png') }}" alt="maniva-meetup">
+                            <a title="Home" href="{{route('home')}}">
+                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="maniva-meetup" width="60%">
                             </a>
                         </h3>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tz-navbar-collapse">
@@ -82,22 +91,37 @@
                                 <li><a href="https://conferenceiiagabon.ga/">Accueil</a></li>
                                 <li><a href="https://conferenceiiagabon.ga/a-propos/">IIA Gabon</a></li>
                                 <li class="menu-item-has-children">
+                                    <a href="#">La Conférence</a>
+                                    <ul class="sub-menu non_mega_menu">
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/presentation/">Présentation</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/les-intervenants/">Intervenants</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="https://conferenceiiagabon.ga/le-programme/">Programme</a>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
                                     <a href="#">Services Utiles</a>
                                     <ul class="sub-menu non_mega_menu">
                                         <li class="menu-item">
                                             <a href="https://conferenceiiagabon.ga/liste-des-hotels/">Hôtels</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/#">Restaurants</a>
+                                            <a href="https://conferenceiiagabon.ga/restaurants/">Restaurants</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/#">Transport</a>
+                                            <a href="https://conferenceiiagabon.ga/transports/">Transport</a>
                                         </li>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Formalités</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="https://conferenceiiagabon.ga/formalites/">Formalités</a></li>
+                                <li><a href="https://conferenceiiagabon.ga/contact/">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- Menu end -->
