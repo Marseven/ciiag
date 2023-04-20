@@ -32,7 +32,7 @@ class RegistrationMessage extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@gesta.com', 'CIIAG') // L'expéditeur
+        return $this->from('no-reply@conferenceiiagabon.ga', 'CIIAG') // L'expéditeur
             ->subject('[CIIAG] Inscription N°'.$this->data->id) // Le sujet
             ->markdown('email.registration')
             ->with('data', $this->data);

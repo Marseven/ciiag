@@ -32,9 +32,9 @@ class DemandeMessage extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@gesta.com', 'GESTA') // L'expéditeur
-            ->subject('[GESTA] Demande de Partenariat') // Le sujet
-            ->markdown('email.demande')
+        return $this->from('no-reply@conferenceiiagabon.ga', 'CIIAG') // L'expéditeur
+            ->subject('[CIIAG] Nouvelle Inscription') // Le sujet
+            ->markdown('email.admin')
             ->with('data', $this->data);
     }
 }

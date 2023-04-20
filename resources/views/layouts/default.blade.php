@@ -38,22 +38,14 @@
             <div class="tz_meetup_header_option">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
-                                    <span>
-                                        <img src="https://conferenceiiagabon.ga/wp-content/themes/maniva-meetup/images/phone.png" alt="phone">
-                                    241077071856
-                                </span>
-
-                                <span>
-                                    <img src="https://conferenceiiagabon.ga/wp-content/themes/maniva-meetup/images/email_meetup.png" alt="email">
-                                    <a href="mailto:contact@conferenceiiagabon.ga">contact@conferenceiiagabon.ga</a>
-                                </span>
+                                    <p class="tz_description_event"> BIENVENUE SUR LE SITE DE LA 1ÈRE CONFÉRENCE INTERNATIONALE SUR L’AUDIT </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="tz-headerRight text-right">
                                 <ul>
                                     <li>

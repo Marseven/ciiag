@@ -66,12 +66,12 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe" required>
+                                                <input class="form-control" type="phone" placeholder="Téléphone Mobil *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_mobile" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Mobile" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_mobile">
+                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_fixe">
                                             </p>
                                         </div>
                                     </div>
@@ -392,8 +392,8 @@
                                 </ul>
                                 <p>Externe : </p>
                                 <ul>
-                                    <li>430 000 FCFA</li>
-                                    <li>530 000 FCFA (Dîner Inclus)</li>
+                                    <li>450 000 FCFA</li>
+                                    <li>550 000 FCFA (Dîner Inclus)</li>
                                 </ul>
                                 </div>
                                 <div class="col-lg-6">
@@ -405,8 +405,8 @@
                                 </ul>
                                 <p>Externe : </p>
                                 <ul>
-                                    <li>500 000 FCFA</li>
-                                    <li>600 000 FCFA (Dîner Inclus)</li>
+                                    <li>520 000 FCFA</li>
+                                    <li>620 000 FCFA (Dîner Inclus)</li>
                                 </ul>
                                 </div>
                             </div>

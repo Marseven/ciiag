@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FileController;
+use App\Mail\DemandeMessage;
+use App\Mail\RegistrationMessage;
 use App\Models\Demande;
 use App\Models\Entreprise;
 use App\Models\Offer;
@@ -16,6 +18,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 
 class WelcomeController extends BasicController
 {
@@ -283,6 +286,7 @@ class WelcomeController extends BasicController
         if (isset($_POST['reference'])) {
             $payment = Payment::where('reference', $_POST['reference'])->first();
             if ($payment) {
+                $admins = User::where('security_role_id', '<=', 2)->get();
                 $payment->status = STATUT_PAID;
                 $payment->transaction_id = $_POST['transactionid'];
                 $payment->operator = $_POST['paymentsystem'];
@@ -292,6 +296,10 @@ class WelcomeController extends BasicController
                     $registration = Registration::find($payment->registration_id);
                     $registration->status = STATUT_PAID;
                     $registration->save();
+                    Mail::to($registration->email)->queue(new RegistrationMessage($registration));
+                    foreach ($admins as $admin) {
+                        Mail::to($admin->email)->queue(new DemandeMessage($registration));
+                    }
                     return http_response_code(200);
                 } else {
                     return http_response_code(403);

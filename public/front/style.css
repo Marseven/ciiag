@@ -5777,3 +5777,29 @@ aside.widget h3.module-title:before {
     }
 
 }
+
+.tz_meetup_header_option_phone {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    }
+    .tz_meetup_header_option_phone p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #99ca3c;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(-100%);
+    animation: tz_meetup_header_option_phone 10s linear infinite;
+    }
+    @keyframes tz_meetup_header_option_phone {
+    0% {
+    transform: translateX(-100%);
+    }
+    100% {
+    transform: translateX(100%);
+    }
+    }
