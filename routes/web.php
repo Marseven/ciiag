@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
 Route::post('/registration', [WelcomeController::class, 'register']);
+Route::post('/entreprise', [WelcomeController::class, 'entreprise']);
 
 Route::get('logout',  function () {
     Auth::logout();

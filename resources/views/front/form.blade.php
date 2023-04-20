@@ -23,9 +23,9 @@
                         <li class="nav-item active">
                             <a class="nav-link active" data-toggle="pill" href="#particulier" style="font-size: 2em; font-weight: 700;">Particulier</a>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#entreprise" style="font-size: 2em; font-weight: 700;">Entreprise</a>
-                        </li> --}}
+                        </li>
                     </ul>
                     <br>
                     <!-- Tab panes -->
@@ -39,12 +39,12 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
+                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
+                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname" required>
                                             </p>
                                         </div>
                                     </div>
@@ -59,14 +59,14 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
+                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email" required>
                                             </p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe">
+                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_fixe" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
@@ -78,7 +78,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
+                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country" required>
                                             </p>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@
                                             <h5>Jeudi 15 juin 2023</h5>
                                             <h6>Atelier 1 : 14h30 - 15h00</h6>
                                             <div class="form-check form-check-inline">
-                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input" name="atelier_j1_a1" type="radio"  value="1"> A1 - Les trois lignes de maitrise: Quelle compréhension
+                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input" name="atelier_j1_a1" type="radio"  value="1" required> A1 - Les trois lignes de maitrise: Quelle compréhension
                                                     pour les organisations afin d'une meilleure application
                                                     dans un contexte économique en constante évolution ?</label>
                                             </div>
@@ -140,7 +140,7 @@
                                             <h6>Atelier 2 : 15h05 - 15h35</h6>
                                             <div class="form-check form-check-inline">
 
-                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="4"> A4 - L'audit interne dans les assurances: les principaux
+                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j1_a2" type="radio"  value="4" required> A4 - L'audit interne dans les assurances: les principaux
                                                     facteurs de développement de la fonction</label>
                                             </div><br>
                                             <div class="form-check form-check-inline">
@@ -161,7 +161,7 @@
                                             <h6>Atelier 1: 11h00 - 11h30</h6>
                                             <div class="form-check form-check-inline">
 
-                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="7"> A7 - L'audit interne, le controle interne, et l'inspection:
+                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a1" type="radio"  value="7" required> A7 - L'audit interne, le controle interne, et l'inspection:
                                                     comment organiser les activités pour optimiser le travail
                                                     des services d'inspection dans l'administration publique ?</label>
                                             </div><br>
@@ -178,7 +178,7 @@
                                             <h6>Atelier 2: 11h35 - 12h05</h6>
                                             <div class="form-check form-check-inline">
 
-                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="10"> A10 - L'art de la bonne communication pour convaincre et
+                                                <label style="font-weight: 400" class="form-check-label" > <input class="form-check-input"  name="atelier_j2_a2" type="radio"  value="10" required> A10 - L'art de la bonne communication pour convaincre et
                                                     agir</label>
                                             </div><br>
                                             <div class="form-check form-check-inline">
@@ -201,10 +201,10 @@
                                 </div>
                             </form>
                         </div>
-                        {{-- <div class="tab-pane fade" id="entreprise">
+                        <div class="tab-pane fade" id="entreprise">
                             <h1>Inscription Entreprise</h1>
 
-                            <form class="wpcf7-form" method="POST" action="{{ url('/registration')}}" name="form_reg" >
+                            <form class="wpcf7-form" method="POST" action="{{ url('/entreprise')}}" name="form_ent" >
                                 @csrf
                                 <div class="tz_meetup_wpcf7-form">
                                     <div class="row">
@@ -215,7 +215,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone">
+                                                <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone')}}" name="phone">
                                             </p>
                                         </div>
                                     </div>
@@ -254,30 +254,32 @@
                                     </div>
                                     <br>
                                     <div class="row">
-                                        <h4>Ajouter un participant <button type="button" class="btn btn-primary">+ Ajouter</button></h4>
+                                        <h4>Ajouter un participant <button type="button" class="btn btn-primary add">+ Ajouter</button> <button type="button" class="btn btn-danger remove">- Supprimer</button></h4>
                                     </div>
                                     <br>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <p>
-                                            <select name="sexe" id="" class="form-control">
-                                                <option value="H">Homme</option>
-                                                <option value="F">Femme</option>
-                                            </select>
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    <div class="row membre" id="membre">
+                                        <div class="row" id="mb1">
+                                            <div class="col-lg-4">
+                                                <p>
+                                                    <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname[]">
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <p>
+                                                    <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname[]">
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <p>
+                                                <select name="sexe[]" id="" class="form-control">
+                                                    <option value="H">Homme</option>
+                                                    <option value="F">Femme</option>
+                                                </select>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-2">
+
+                                            </div>
                                         </div>
                                     </div>
 
@@ -362,11 +364,11 @@
                                     </div>
 
                                     <p>
-                                        <input class="wpcf7-form-control wpcf7-submit" type="submit" value="S'inscrire">
+                                        <input class="wpcf7-form-control wpcf7-submit" type="button" value="S'inscrire">
                                     </p>
                                 </div>
                             </form>
-                        </div> --}}
+                        </div>
                     </div>
                     <!-- Tabs content -->
 
@@ -460,8 +462,10 @@
 @endsection
 
 @push('scripts')
-<script language="JavaScript">
-    function afficherPiece() {
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script language="JavaScript">
+        function afficherPiece() {
             var adherant = document.getElementById("adherant");
 
             if (document.form_reg.adherant.value == 1) {
@@ -470,5 +474,37 @@
                 adherant.style.display = "none";
             }
         }
-</script>
+
+        var counter = 2;
+
+        $(".add").click(function(e) {
+            e.preventDefault();
+            if (counter > 20) {
+                alert('Vous ne pouvez pas ajouter plus de 20 membres au même moment.', 'Attention');
+                return false;
+            }
+
+            var membre = document.getElementById("membre");
+            content = '<div class="row" id="mb'+counter+'"><div class="col-lg-4"><p><input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname[]"></p></div><div class="col-lg-4"><p><input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname[]"> </p></div><div class="col-lg-2"><p><select name="sexe[]" id="" class="form-control"><option value="H">Homme</option><option value="F">Femme</option></select></p></div><div class="col-lg-2"></div></div>';
+            membre.insertAdjacentHTML('beforeend', content);
+            counter++;
+
+        });
+
+        //delete forms
+        $(".remove").click(function(e) {
+            e.preventDefault();
+
+            if (counter == 2) {
+                alert('Il n y a rien à supprimer', 'Attention');
+                return false;
+            }
+
+            counter--;
+            var index = counter - 1;
+            var mb = document.getElementById("mb" + counter);
+            mb.remove();
+
+        });
+    </script>
 @endpush
