@@ -10,7 +10,7 @@
 
 
     <div class="tz_contact_icon_form">
-        <div class="container">
+        <div class="container" style="width: 95% !important;">
             <div class="row">
 
                 @include('layouts.flash')

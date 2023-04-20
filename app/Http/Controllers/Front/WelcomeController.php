@@ -255,8 +255,11 @@ class WelcomeController extends BasicController
         $payment = Payment::where('registration_id', $registration->id)->first();
 
         if ($payment->status == STATUT_PAID) {
+
             $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+
             //dd($registration);
+
             return view(
                 'front.result',
                 [
