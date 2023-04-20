@@ -542,10 +542,10 @@ html[xmlns] .slides {
     margin: 0;
     padding: 40px 0;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: #000;
     line-height: 1.4em;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Arial', sans-serif;
     display: block;
     text-transform: uppercase;
     transition: all 0.2s linear 0s;
@@ -731,7 +731,7 @@ html[xmlns] .slides {
     background: transparent;
 }
 .tz-homeType2.tz-homeTypeRelative nav ul.tz-nav > li > a {
-    color: #242732;
+    color: #00305e;
 }
 .tz-homeType2.tz-homeType3 ul.tz-nav > li:last-child {
     padding-right: 0;
