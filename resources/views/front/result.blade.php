@@ -27,7 +27,7 @@
                                     </div>
                                 <span class="tz_meetup_video_sub_title">
                                     <i class="fa fa-clock-o tz_icon_position_left"></i>
-                                    15-16 Juin 2023 – Billet Adhérent
+                                    15-16 Juin 2023 – Billet N°{{$registration->id}}
                                     <span class="tz_meetup_video_sub_title_line"></span>
                                 </span>
                                     <div class="tz_meetup_content">

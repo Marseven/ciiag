@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Auth;
 
-class CandidatureMessage extends Mailable
+class RegistrationMessage extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,9 +32,9 @@ class CandidatureMessage extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@gesta.com', 'GESTA') // L'expéditeur
-            ->subject('[GESTA] Nouvelle Candidature') // Le sujet
-            ->markdown('email.candidature')
+        return $this->from('no-reply@gesta.com', 'CIIAG') // L'expéditeur
+            ->subject('[CIIAG] Inscription N°'.$this->data->id) // Le sujet
+            ->markdown('email.registration')
             ->with('data', $this->data);
     }
 }
