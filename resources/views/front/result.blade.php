@@ -15,7 +15,7 @@
 
                 @include('layouts.flash')
 
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="col-lg-9 col-md-7 col-sm-12 col-xs-12">
 
                     @if ($registration)
                         <div class="tz_width_column tz_text_box_slider_padding">
@@ -99,7 +99,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <a class="tz_btn_video_meetup tz_btn_shop_meetup tz_meetup_btn_dark" target="_blank" href="#">Télécharger le Billet</a>
+                                    <a class="tz_btn_video_meetup tz_btn_shop_meetup tz_meetup_btn_dark" onclick="javascript:window.print();" href="#">Télécharger le Billet</a>
                                 </div>
                             </div>
                         </div>
@@ -461,7 +461,7 @@
 
 
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                {{-- <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="tz_contact_meet_2">
                         <div class="tz_contact_detail_meet">
                             <span class="tz_contact_meet_icon">
@@ -537,7 +537,7 @@
                             <p>+241 77 07 18 56</p>
 
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
