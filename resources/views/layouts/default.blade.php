@@ -323,7 +323,6 @@
     <!-- Include custom js -->
     <script src="{{ asset('front/js/custom.js') }}"></script>
     <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/script.js" id="transcy-front-script-js"></script>
-    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/front.js" id="transcy-front-js-js"></script>
 
     @stack('scripts')
 
