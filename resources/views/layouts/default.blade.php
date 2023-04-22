@@ -2,7 +2,7 @@
 <html lang="fr">
 
 @php
-    $lang = session()->get('locale');
+    $lang = App::getLocale();
 @endphp
 
     <head>
