@@ -49,7 +49,7 @@ return [
     'dates' => 'Dates',
     'salle' => 'Salle',
     'more-infos' => 'Plus d\infos',
-    'keep-contact' => 'Restez informer',
+    'keep-contact' => 'Restez informer..!',
     'thanks' => 'Merci pour votre inscription',
     'list-members' => 'Liste des membres',
     'download-ticket' => 'Télécharger le billet',

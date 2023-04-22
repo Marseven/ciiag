@@ -49,7 +49,7 @@ return [
     'dates' => 'Dates',
     'salle' => 'Room',
     'more-infos' => 'More informations',
-    'keep-contact' => 'Keep up to date',
+    'keep-contact' => 'Stay informed..!',
     'thanks' => 'Thank you for your registration',
     'list-members' => 'List of members',
     'download-ticket' => 'Download ticket',

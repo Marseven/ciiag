@@ -81,28 +81,28 @@
                             <!-- Menu start -->
                             <nav class="nav-collapse pull-right tz-menu">
                                 <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
-                                    <li><a href="https://conferenceiiagabon.ga/">{{ __('form.home') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/?lang={{session()->get('locale')}}">{{ __('form.home') }}</a></li>
                                     <li class="menu-item-has-children">
-                                        <a href="https://conferenceiiagabon.ga/a-propos/">{{ __('form.iia-gabon') }}</a>
+                                        <a href="https://conferenceiiagabon.ga/a-propos/?lang={{session()->get('locale')}}">{{ __('form.iia-gabon') }}</a>
                                         <ul class="sub-menu non_mega_menu">
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/">{{ __('form.about') }}</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/">{{ __('form.mission') }}</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/">{{ __('form.objectif') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/?lang={{session()->get('locale')}}">{{ __('form.about') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/?lang={{session()->get('locale')}}">{{ __('form.mission') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/?lang={{session()->get('locale')}}">{{ __('form.objectif') }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">{{ __('form.la-conference') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/presentation/">{{ __('form.presentation') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/presentation/?lang={{session()->get('locale')}}">{{ __('form.presentation') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/les-intervenants/">{{ __('form.intervenant') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/les-intervenants/?lang={{session()->get('locale')}}">{{ __('form.intervenant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/le-programme/">{{ __('form.programme') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/le-programme/?lang={{session()->get('locale')}}">{{ __('form.programme') }}</a>
                                             </li>
-                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/">{{ __('form.inscription') }}</a></li>
+                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/?lang={{session()->get('locale')}}">{{ __('form.inscription') }}</a></li>
 
                                         </ul>
                                     </li>
@@ -110,19 +110,19 @@
                                         <a href="#">{{ __('form.service-utile') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/">{{ __('form.hotel') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/?lang={{session()->get('locale')}}">{{ __('form.hotel') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/restaurants/">{{ __('form.restaurant') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/restaurants/?lang={{session()->get('locale')}}">{{ __('form.restaurant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/transports/">{{ __('form.transport') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/transports/?lang={{session()->get('locale')}}">{{ __('form.transport') }}</a>
                                             </li>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="https://conferenceiiagabon.ga/formalites/">{{ __('form.formalites') }}</a></li>
-                                    <li><a href="https://conferenceiiagabon.ga/contact/">{{ __('form.contact') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/formalites/?lang={{session()->get('locale')}}">{{ __('form.formalites') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/contact/?lang={{session()->get('locale')}}">{{ __('form.contact') }}</a></li>
                                 </ul>
 
                             </nav>
