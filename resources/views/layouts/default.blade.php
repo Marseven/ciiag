@@ -219,9 +219,7 @@
         <!-- footer end -->
 
     </div>
-@php
-    dd($lang);
-@endphp
+
     @if ($lang == 'fr')
         <div class="wrap-template">
             <div class="transcy-switch notranslate">
