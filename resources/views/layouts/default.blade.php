@@ -69,7 +69,7 @@
                 <div class="container">
                     <div class="tzHeaderContainer">
                         <h3 class="pull-left tz_logo">
-                            <a title="Home" href="{{route('home')}}/{{$lang == "en" ? "?lang=fr": ""}}">
+                            <a title="Home" href="{{route('home')}}/{{$lang == "en" ? "?lang=en": ""}}">
                                 <img src="{{ asset('front/images/logo-ciiag-2.png') }}" alt="maniva-meetup" width="80%">
                             </a>
                         </h3>
@@ -85,28 +85,28 @@
                             <!-- Menu start -->
                             <nav class="nav-collapse pull-right tz-menu">
                                 <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
-                                    <li><a href="https://conferenceiiagabon.ga/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.home') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.home') }}</a></li>
                                     <li class="menu-item-has-children">
-                                        <a href="https://conferenceiiagabon.ga/a-propos/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.iia-gabon') }}</a>
+                                        <a href="https://conferenceiiagabon.ga/a-propos/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.iia-gabon') }}</a>
                                         <ul class="sub-menu non_mega_menu">
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.about') }}</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.mission') }}</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.objectif') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.about') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.mission') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.objectif') }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">{{ __('form.la-conference') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/presentation/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.presentation') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/presentation/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.presentation') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/les-intervenants/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.intervenant') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/les-intervenants/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.intervenant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/le-programme/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.programme') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/le-programme/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.programme') }}</a>
                                             </li>
-                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.inscription') }}</a></li>
+                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.inscription') }}</a></li>
 
                                         </ul>
                                     </li>
@@ -114,19 +114,19 @@
                                         <a href="#">{{ __('form.service-utile') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.hotel') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.hotel') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/restaurants/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.restaurant') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/restaurants/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.restaurant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/transports/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.transport') }}</a>
+                                                <a href="https://conferenceiiagabon.ga/transports/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.transport') }}</a>
                                             </li>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="https://conferenceiiagabon.ga/formalites/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.formalites') }}</a></li>
-                                    <li><a href="https://conferenceiiagabon.ga/contact/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.contact') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/formalites/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.formalites') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/contact/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.contact') }}</a></li>
                                 </ul>
 
                             </nav>
@@ -152,7 +152,7 @@
                         <div class="tz-breadcrumb">
                             <h4>
                                 <span>
-                                    <a class="home" href="https://conferenceiiagabon.ga/{{$lang == "en" ? "?lang=fr": ""}}">{{ __('form.home') }} / </a>
+                                    <a class="home" href="https://conferenceiiagabon.ga/{{$lang == "en" ? "?lang=en": ""}}">{{ __('form.home') }} / </a>
                                 </span>
                                 <span>
                                     {{ __('form.inscription') }}
