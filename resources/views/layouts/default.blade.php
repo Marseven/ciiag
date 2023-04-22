@@ -38,14 +38,14 @@
             <div class="tz_meetup_header_option">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
-                                    <p class="tz_description_event"> BIENVENUE SUR LE SITE DE LA 1ÈRE CONFÉRENCE INTERNATIONALE SUR L’AUDIT </p>
+                                    <p class="tz_description_event"> BIENVENUE SUR LE SITE DE LA CONFÉRENCE INTERNATIONALE DE L’AUDIT INTERNE À LIBREVILLE. </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="tz-headerRight text-right">
                                 <ul>
                                     <li>
@@ -66,57 +66,69 @@
                     <div class="tzHeaderContainer">
                         <h3 class="pull-left tz_logo">
                             <a title="Home" href="{{route('home')}}">
-                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="maniva-meetup" width="60%">
+                                <img src="{{ asset('front/images/logo-ciiag-2.png') }}" alt="maniva-meetup" width="80%">
                             </a>
                         </h3>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tz-navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
+                        <div class="tzHeaderMenu_nav">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tz-navbar-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
 
-                        <button class="pull-right tz-search">
-                            <i class="fa fa-search"></i>
-                        </button>
+                            <button class="pull-right tz-search">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-                        <!-- Menu start -->
-                        <nav class="nav-collapse pull-right tz-menu">
-                            <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
-                                <li><a href="https://conferenceiiagabon.ga/">Accueil</a></li>
-                                <li><a href="https://conferenceiiagabon.ga/a-propos/">IIA Gabon</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">La Conférence</a>
-                                    <ul class="sub-menu non_mega_menu">
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/presentation/">Présentation</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/les-intervenants/">Intervenants</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/le-programme/">Programme</a>
-                                        </li>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Services Utiles</a>
-                                    <ul class="sub-menu non_mega_menu">
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/liste-des-hotels/">Hôtels</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/restaurants/">Restaurants</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="https://conferenceiiagabon.ga/transports/">Transport</a>
-                                        </li>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="https://conferenceiiagabon.ga/formalites/">Formalités</a></li>
-                                <li><a href="https://conferenceiiagabon.ga/contact/">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <!-- Menu end -->
+                            <!-- Menu start -->
+                            <nav class="nav-collapse pull-right tz-menu">
+                                <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
+                                    <li><a href="https://conferenceiiagabon.ga/">Accueil</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="https://conferenceiiagabon.ga/a-propos/">IIA-Gabon</a>
+                                        <ul class="sub-menu non_mega_menu">
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/">A PROPOS</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/">Nos missions</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/">Nos objectifs</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">La Conférence</a>
+                                        <ul class="sub-menu non_mega_menu">
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/presentation/">Présentation</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/les-intervenants/">Intervenants</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/le-programme/">Programme</a>
+                                            </li>
+                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/">Inscription</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Services Utiles</a>
+                                        <ul class="sub-menu non_mega_menu">
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/">Hôtels</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/restaurants/">Restaurants</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="https://conferenceiiagabon.ga/transports/">Transport</a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://conferenceiiagabon.ga/formalites/">Formalités</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/contact/">Contact</a></li>
+                                </ul>
+
+                            </nav>
+                            <!-- Menu end -->
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -204,6 +216,34 @@
 
     </div>
 
+    <div class="wrap-template">
+        <div class="transcy-switch notranslate">
+            <div class="default-template" positon-float="Top-right" english-name="only-flag">
+                <div class="lang-current" arrow-icon="caret-down" effect="small-shadow" hover-effect="large-shadow" flag-style="square circle" flag-size="small" english-name="only-flag">
+                    <div class="wrap-flag fr">
+                            <div class="lang-flag"></div>
+                    </div>
+                    <div class="lang-text">
+                        <span>French</span>
+                    </div>
+                    <div class="lang-arrow"></div>
+                </div>
+                <div class="lang-target">
+                    <ul>
+                        <li>
+                            <a href="https://conferenceiiagabon.ga/formalites/?lang=en">
+                                <div class="wrap-flag en">
+                                    <div class="lang-flag"></div>
+                                </div>
+                                <span>English</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('front/js/library/jquery.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -217,6 +257,9 @@
 
     <!-- Include custom js -->
     <script src="{{ asset('front/js/custom.js') }}"></script>
+
+    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/script.js?ver=1682152419" id="transcy-front-script-js"></script>
+    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/front.js?ver=1682152419" id="transcy-front-js-js"></script>
 
     @stack('scripts')
 

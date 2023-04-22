@@ -39,12 +39,12 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname" required>
+                                                <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname" required>
+                                                <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname" required>
                                             </p>
                                         </div>
                                     </div>
@@ -59,26 +59,26 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email" required>
+                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="" name="email" required>
                                             </p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Mobil *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone_fixa')}}" name="phone_mobile" required>
+                                                <input class="form-control" type="phone" placeholder="Téléphone Mobil *" aria-invalid="false" aria-required="true" size="40" value="" name="phone_mobile" required>
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe" aria-invalid="false" size="40" value="{{old('phone_mobile')}}" name="phone_fixe">
+                                                <input class="form-control" type="phone" placeholder="Téléphone Fixe" aria-invalid="false" size="40" value="" name="phone_fixe">
                                             </p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country" required>
+                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="" name="country" required>
                                             </p>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                             </div>
                                             <p id="adherant" style="display:none">
 
-                                                    <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
+                                                    <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="" name="number_adherant">
 
                                             </p>
                                         </div>
@@ -210,31 +210,49 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Nom de l'entreprise *" aria-invalid="false" aria-required="true" size="40" value="{{old('label')}}" name="label">
+                                                <input class="form-control" type="text" placeholder="Nom de l'entreprise *" aria-invalid="false" aria-required="true" size="40" value="" name="label">
                                             </p>
                                         </div>
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="{{old('phone')}}" name="phone">
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p>
-                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="email">
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <p>
-                                                <input class="form-control" type="text" placeholder="Adresse *" aria-invalid="false" aria-required="true" size="40" value="{{old('email')}}" name="adress">
+                                                <input class="form-control" type="phone" placeholder="Téléphone *" aria-invalid="false" aria-required="true" size="40" value="" name="phone">
                                             </p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <p>
-                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="{{old('country')}}" name="country">
+                                                <input class="form-control" type="email" placeholder="Email *" aria-invalid="false" aria-required="true" size="40" value="" name="email">
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p>
+                                                <input class="form-control" type="text" placeholder="Adresse *" aria-invalid="false" aria-required="true" size="40" value="" name="adress">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p>
+                                                <input class="form-control" type="text" placeholder="Pays d'Origine *" aria-invalid="false" aria-required="true" size="40" value="" name="country">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+
+                                        <div class="col-lg-6">
+                                            <h5>Statut IIA 2023  : Adhérent</h5>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Oui</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
+                                                <label class="form-check-label" for="inlineCheckbox2">Non</label>
+                                            </div>
+                                            <p id="adherant_ent" style="display:none">
+                                                <input class="form-control" type="text" placeholder="Numéro Adhérant *" aria-invalid="false" size="40" value="{{old('number_adherant')}}" name="number_adherant">
                                             </p>
                                         </div>
 
@@ -261,12 +279,12 @@
                                         <div class="row" id="mb1">
                                             <div class="col-lg-4">
                                                 <p>
-                                                    <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="{{old('firstname')}}" name="firstname[]">
+                                                    <input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname[]">
                                                 </p>
                                             </div>
                                             <div class="col-lg-4">
                                                 <p>
-                                                    <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="{{old('lastname')}}" name="lastname[]">
+                                                    <input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname[]">
                                                 </p>
                                             </div>
                                             <div class="col-lg-2">
@@ -364,7 +382,7 @@
                                     </div>
 
                                     <p>
-                                        <input class="wpcf7-form-control wpcf7-submit" type="button" value="S'inscrire">
+                                        <input class="wpcf7-form-control wpcf7-submit" type="submit" value="S'inscrire">
                                     </p>
                                 </div>
                             </form>
@@ -467,6 +485,16 @@
     <script language="JavaScript">
         function afficherPiece() {
             var adherant = document.getElementById("adherant");
+
+            if (document.form_ent.adherant.value == 1) {
+                adherant.style.display = "block";
+            } else {
+                adherant.style.display = "none";
+            }
+        }
+
+        function afficherad() {
+            var adherant = document.getElementById("adherant_ent");
 
             if (document.form_reg.adherant.value == 1) {
                 adherant.style.display = "block";

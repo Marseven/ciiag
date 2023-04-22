@@ -26,6 +26,7 @@ class CreatePayments extends Migration
             $table->string('paid_at')->nullable();
             $table->string('expired_at')->nullable();
             $table->integer('registration_id')->nullable();
+            $table->integer('entreprise_id')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ use App\Mail\DemandeMessage;
 use App\Mail\RegistrationMessage;
 use App\Models\Demande;
 use App\Models\Entreprise;
+use App\Models\Membre;
 use App\Models\Offer;
 use App\Models\Payment;
 use App\Models\Project;
@@ -55,7 +56,7 @@ class WelcomeController extends BasicController
         $registration->status = STATUT_RECEIVE;
 
         if ($registration->save()){
-            return WelcomeController::ebilling($registration);
+            return WelcomeController::ebilling('reg', $registration);
         }else{
             return back()->with('error', "Une erreur s'est produite.");
         }
@@ -65,16 +66,15 @@ class WelcomeController extends BasicController
     {
         $entreprise = new Entreprise();
 
-        $entreprise->lastname = $request->lastname;
-        $entreprise->firstname = $request->firstname;
-        $entreprise->sexe = $request->sexe;
+        $entreprise->label = $request->label;
+
         $exist = Entreprise::where('email',  $request->email)->first();
         if($exist != null){
             return back()->with('error', "Cette email existe déjà.");;
         }
         $entreprise->email = $request->email;
-        $entreprise->phone_fixe = $request->phone_fixe;
-        $entreprise->phone_mobile = $request->phone_mobile;
+        $entreprise->phone= $request->phone;
+        $entreprise->adress = $request->adress;
         $entreprise->country = $request->country;
         $entreprise->adherant = $request->adherant;
         $entreprise->number_adherant = $request->number_adherant;
@@ -87,8 +87,20 @@ class WelcomeController extends BasicController
 
         $entreprise->status = STATUT_RECEIVE;
 
+        //dd($request);
+
         if ($entreprise->save()){
-            return WelcomeController::ebilling($entreprise);
+            $i = 0;
+            foreach($request->firstname as $fn){
+                $membre = new Membre();
+                $membre->firstname = $fn;
+                $membre->lastname = $request->lastname[$i];
+                $membre->sexe = $request->sexe[$i];
+                $membre->entreprise_id = $entreprise->id;
+                $membre->status = STATUT_RECEIVE;
+                $membre->save();
+            }
+            return WelcomeController::ebilling('ent', $entreprise);
         }else{
             return back()->with('error', "Une erreur s'est produite.");
         }
@@ -98,7 +110,11 @@ class WelcomeController extends BasicController
     {
 
         $payment = new Payment();
-        $payment = Payment::where('registration_id', $data['registration_id'])->first();
+        if(isset($data['registration_id'])){
+            $payment = Payment::where('registration_id', $data['registration_id'])->first();
+        }else{
+            $payment =Payment::where('entreprise_id', $data['entreprise_id'])->first();
+        }
         if ($payment) {
             $payment->reference = $data['reference'];
             return $payment->save();
@@ -110,7 +126,11 @@ class WelcomeController extends BasicController
             $payment->status = $data['status'];
             $payment->time_out = $data['time_out'];
             $payment->billing_id = $data['billing_id'];
-            $payment->registration_id = $data['registration_id'];
+            if(isset($data['registration_id'])){
+                $payment->registration_id = $data['registration_id'];
+            }else{
+                $payment->entreprise_id = $data['entreprise_id'];
+            }
             return $payment->save();
         }
 
@@ -131,10 +151,16 @@ class WelcomeController extends BasicController
         }
     }
 
-    static function ebilling(Registration $registration)
+    static function ebilling($type, $entity)
     {
 
-        $pay = WelcomeController::check_payment($registration->id);
+        if($type == "reg"){
+            $entity = Registration::find($entity)->first();
+        }else{
+            $entity = Entreprise::find($entity)->first();
+        }
+
+        $pay = WelcomeController::check_payment($type, $entity->id);
         $invoice = false;
 
         if ($pay != null) {
@@ -143,31 +169,42 @@ class WelcomeController extends BasicController
 
         if ($pay != null && $invoice != false) {
             $bill_id = $invoice->billing_id;
-            $eb_callbackurl = url('/callback/ebilling/' . $registration->id);
+            $eb_callbackurl = url('/callback/ebilling/' . $entity->id);
         } else {
 
-            $eb_name = $registration->firsname.' '.$registration->lastname;
+            $eb_name = $entity->firsname.' '.$entity->lastname;
             $date_due = new \DateTime("2023-05-20");
-            if($registration->created_at <= $date_due && $registration->adherant == 1){
+            if($entity->created_at <= $date_due && $entity->adherant == 1){
                 $eb_amount = 300000;
-            }elseif($registration->created_at <= $date_due && $registration->adherant == 0){
+            }elseif($entity->created_at <= $date_due && $entity->adherant == 0){
                 $eb_amount = 430000;
-            }elseif($registration->created_at > $date_due && $registration->adherant == 0){
+            }elseif($entity->created_at > $date_due && $entity->adherant == 0){
                 $eb_amount = 370000;
             }else{
                 $eb_amount = 500000;
             }
-            if($registration->gala == 1){
+            if($entity->gala == 1){
                 $eb_amount += 100000;
+            }
+
+            if($type == 'ent'){
+                $eb_amount *= $entity->membres->count();
+
+                if($entity->membres->count() >= 5){
+                    $eb_amount *= 0.95;
+                }elseif($entity->membres->count() >= 10){
+                    $eb_amount *= 0.93;
+                }
+
             }
 
             if(env('TEST') == true) $eb_amount = 1000;
 
             $eb_shortdescription = "Paiement de l'inscription Pour l'IIAG ";
             $eb_reference = WelcomeController::str_reference(10);
-            $eb_email = $registration->email;
-            $eb_msisdn = $registration->phone_fixe;
-            $eb_callbackurl = url('/callback/ebilling/' . $registration->id);
+            $eb_email = $entity->email;
+            $eb_msisdn = isset($entity->phone_mobile) ? $entity->phone_mobile : $entity->phone;
+            $eb_callbackurl = url('/callback/ebilling/' . $entity->id);
 
 
             $expiry_period = 60; // 60 minutes timeout
@@ -223,7 +260,7 @@ class WelcomeController extends BasicController
             // Get unique transaction id
             $bill_id = $response['e_bill']['bill_id'];
 
-
+            if($type == "reg"){
                 $data = [
                     'amount' => $eb_amount,
                     'description' => $eb_shortdescription,
@@ -232,10 +269,22 @@ class WelcomeController extends BasicController
                     'time_out' => $expiry_period,
                     'description' => $eb_shortdescription,
                     'billing_id' => $bill_id,
-                    'registration_id' => $registration->id,
+                    'registration_id' => $entity->id,
                 ];
+            }else{
+                $data = [
+                    'amount' => $eb_amount,
+                    'description' => $eb_shortdescription,
+                    'reference' => $eb_reference,
+                    'status' => STATUT_PENDING,
+                    'time_out' => $expiry_period,
+                    'description' => $eb_shortdescription,
+                    'billing_id' => $bill_id,
+                    'entreprise_id' => $entity->id,
+                ];
+            }
 
-                WelcomeController::create($data);
+            WelcomeController::create($data);
         }
 
         // Redirect to E-Billing portal
@@ -337,10 +386,14 @@ class WelcomeController extends BasicController
         }
     }
 
-    static function check_payment($id)
+    static function check_payment($type, $id)
     {
 
-        $payment = Payment::where('registration_id', $id)->get();
+        if($type == "reg"){
+            $payment = Payment::where('registration_id', $id)->get();
+        }else{
+            $payment = Payment::where('entreprise_id', $id)->get();
+        }
 
         if ($payment->first() != null) {
             return $payment->first();

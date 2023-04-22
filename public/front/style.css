@@ -561,7 +561,8 @@ html[xmlns] .slides {
 }
 .tzHeaderContainer h3 {
     margin: 0;
-    padding: 35px 40px 35px 0;
+    width: 41%;
+    padding: 20px 40px 0px 0;
     line-height: normal;
     font-size: inherit;
     transition: all 0.2s linear 0s;
@@ -5802,4 +5803,150 @@ aside.widget h3.module-title:before {
     100% {
     transform: translateX(100%);
     }
+    }
+
+    .admin-bar .transcy-switch .default-template[positon-float="Top-right"], .admin-bar .transcy-switch .default-template[positon-float="Top-left"] {
+        top: 52px;
+    }
+    .transcy-switch .default-template[positon-float="Top-right"] {
+        top: 20px;
+        right: 20px;
+    }
+    .transcy-switch .default-template[english-name="only-flag"] {
+        border: none;
+    }
+    .transcy-switch .default-template {
+        position: fixed;
+        z-index: 111111;
+        bottom: 20px;
+        right: 20px;
+        height: max-content;
+        width: 180px;
+        border: 1px solid #e8e8e8;
+        display: flex;
+        flex-flow: column;
+    }
+
+
+    .transcy-switch .default-template .lang-current[effect="small-shadow"] {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .transcy-switch .default-template .lang-current[english-name="only-flag"] {
+        min-width: auto;
+        max-width: max-content;
+        margin-left: auto;
+    }
+    .transcy-switch .default-template .lang-current {
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 0px 1px rgba(25, 30, 35, 0.1);
+        border-radius: 2px;
+        background: rgba(246, 246, 247, 1);
+        min-height: 25px;
+        line-height: 15px;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #000;
+    }
+
+    .transcy-switch .default-template .lang-target {
+        margin-top: 1px;
+        font-size: 15px;
+        display: none;
+    }
+
+    .transcy-switch .default-template .lang-current[english-name="only-flag"] .wrap-flag {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .transcy-switch .default-template .lang-current[english-name="only-flag"] .lang-text {
+        order: 1;
+        font-size: 18px;
+        display: none;
+    }
+    .transcy-switch .default-template .lang-current .lang-text {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .transcy-switch .default-template .lang-current[english-name="only-flag"] .lang-arrow {
+        order: 3;
+        margin-left: 0;
+    }
+    .transcy-switch .default-template .lang-current .lang-arrow {
+        width: 6px;
+        height: 4px;
+        background-image: url(https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/images/caret-down-icon.svg);
+        background-size: cover;
+        margin-left: auto;
+    }
+
+    .default-template .lang-current[flag-style="square circle"] .lang-flag {
+        border-radius: 50%;
+    }
+    .transcy-switch .default-template .lang-current[flag-style^="square"] .lang-flag {
+        width: 20px;
+    }
+    .transcy-switch div[flag-style^="square"] .fr > .lang-flag {
+        background-position: -2525px 0 !important;
+    }
+    .transcy-switch .default-template .lang-current .lang-flag {
+        width: 30px;
+        height: 20px;
+        background-image: url(https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/images/flags.png);
+        background-size: auto 20px;
+        margin-right: 10px;
+        transform: scale(0.9);
+    }
+
+    .transcy-switch .fr > .lang-flag {
+        background-position: -2520px 0 !important;
+    }
+
+    .transcy-switch .default-template .lang-target {
+        margin-top: 1px;
+        font-size: 15px;
+        display: none;
+    }
+
+    .transcy-switch .default-template .lang-target ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        max-height: 225px;
+        overflow-y: auto;
+        background: #F3F4F5;
+    }
+
+    .transcy-switch .default-template .lang-target ul li a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        color: #000;
+        outline: none;
+    }
+
+    .transcy-switch .default-template .lang-target ul li .lang-flag {
+        width: 30px;
+        height: 20px;
+        background-image: url(https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/images/flags.png);
+        background-size: auto 20px;
+        margin-right: 10px;
+        transform: scale(0.9);
+    }
+    .transcy-switch .en > .lang-flag {
+        background-position: -1920px 0 !important;
+    }
+
+    .transcy-switch .default-template .lang-target ul li a span {
+        overflow: hidden;
+        word-break: break-word;
+    }
+
+    .notranslate *, #wpadminbar * {
+        direction: unset !important;
     }

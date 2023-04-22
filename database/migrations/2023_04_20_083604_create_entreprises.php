@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('adress');
             $table->string('country');
+            $table->string('adherant');
+            $table->string('number_adherant')->nullable();
             $table->string('gala');
             $table->string('atelier_j1_a1');
             $table->string('atelier_j1_a2');
