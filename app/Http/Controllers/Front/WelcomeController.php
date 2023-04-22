@@ -316,11 +316,8 @@ class WelcomeController extends BasicController
             if($type == "reg"){
                 $entity =  $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
             }else{
-               $entity =  $entreprise->load(['membres', 'atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+                $entity =  $entreprise->load(['membres', 'atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
             }
-
-
-            //dd($registration);
 
             return view(
                 'front.result',
@@ -353,13 +350,24 @@ class WelcomeController extends BasicController
                 $payment->amount = $_POST['amount'];
                 $payment->paid_at = date('Y-m-d H:i');
                 if ($payment->save()) {
-                    $registration = Registration::find($payment->registration_id);
-                    $registration->status = STATUT_PAID;
-                    $registration->save();
-                    Mail::to($registration->email)->queue(new RegistrationMessage($registration));
-                    foreach ($admins as $admin) {
-                        Mail::to($admin->email)->queue(new DemandeMessage($registration));
+                    if($payment->registration_id != null){
+                        $registration = Registration::find($payment->registration_id);
+                        $registration->status = STATUT_PAID;
+                        $registration->save();
+                        Mail::to($registration->email)->queue(new RegistrationMessage($registration));
+                        foreach ($admins as $admin) {
+                            Mail::to($admin->email)->queue(new DemandeMessage($registration));
+                        }
+                    }else{
+                        $entreprise = Registration::find($payment->entreprise_id);
+                        $entreprise->status = STATUT_PAID;
+                        $entreprise->save();
+                        Mail::to($entreprise->email)->queue(new RegistrationMessage($entreprise));
+                        foreach ($admins as $admin) {
+                            Mail::to($admin->email)->queue(new DemandeMessage($entreprise));
+                        }
                     }
+
                     return http_response_code(200);
                 } else {
                     return http_response_code(403);
