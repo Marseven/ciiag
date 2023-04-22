@@ -84,18 +84,18 @@ class DashboardController extends BasicController
 
 
 
-            $actions = '<button style="margin:10px;" class="m-10 text-primary text-xl modal_view_action" data-bs-toggle="modal"
+            $actions = '<button style="margin:10px;" class="m-10 btn btn-primary text-xl modal_view_action" data-bs-toggle="modal"
             data-id="' . $record->id . '"
             data-bs-target="#cardModalView' . $record->id . '">
-            <i class="lni lni-eye"></i>
+            <i class="fa fa-eye"></i>
           </button>';
 
 
             $actions .= '
-          <button style="margin:10px;" class="m-10 text-danger text-xl modal_delete_action" data-bs-toggle="modal"
+          <button style="margin:10px;" class="m-10 btn btn-danger text-xl modal_delete_action" data-bs-toggle="modal"
             data-id="' . $record->id . '"
             data-bs-target="#cardModalCenter' . $record->id . '">
-            <i class="lni lni-trash-can"></i>
+            <i class="fa fa-trash"></i>
           </button>';
 
 
