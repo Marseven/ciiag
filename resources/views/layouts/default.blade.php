@@ -41,7 +41,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
-                                    <p class="tz_description_event"> BIENVENUE SUR LE SITE DE LA CONFÉRENCE INTERNATIONALE DE L’AUDIT INTERNE À LIBREVILLE. </p>
+                                    <p class="tz_description_event"> {{ __('form.slide-text') }} </p>
                                 </div>
                             </div>
                         </div>
@@ -81,48 +81,48 @@
                             <!-- Menu start -->
                             <nav class="nav-collapse pull-right tz-menu">
                                 <ul id="tz-navbar-collapse" class="nav navbar-nav collapse navbar-collapse tz-nav">
-                                    <li><a href="https://conferenceiiagabon.ga/">Accueil</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/">{{ __('form.home') }}</a></li>
                                     <li class="menu-item-has-children">
-                                        <a href="https://conferenceiiagabon.ga/a-propos/">IIA-Gabon</a>
+                                        <a href="https://conferenceiiagabon.ga/a-propos/">{{ __('form.iia-gabon') }}</a>
                                         <ul class="sub-menu non_mega_menu">
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/">A PROPOS</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/">Nos missions</a></li>
-                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/">Nos objectifs</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/a-propos/">{{ __('form.about') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-mission/">{{ __('form.mission') }}</a></li>
+                                            <li class="menu-item"><a href="https://conferenceiiagabon.ga/nos-objectifs/">{{ __('form.objectif') }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
-                                        <a href="#">La Conférence</a>
+                                        <a href="#">{{ __('form.la-conference') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/presentation/">Présentation</a>
+                                                <a href="https://conferenceiiagabon.ga/presentation/">{{ __('form.presentation') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/les-intervenants/">Intervenants</a>
+                                                <a href="https://conferenceiiagabon.ga/les-intervenants/">{{ __('form.intervenant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/le-programme/">Programme</a>
+                                                <a href="https://conferenceiiagabon.ga/le-programme/">{{ __('form.programme') }}</a>
                                             </li>
-                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/">Inscription</a></li>
+                                            <li class="menu-item"><a href="https://ciiag.mebodorichard.tech/public/">{{ __('form.inscription') }}</a></li>
 
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
-                                        <a href="#">Services Utiles</a>
+                                        <a href="#">{{ __('form.service-utile') }}</a>
                                         <ul class="sub-menu non_mega_menu">
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/">Hôtels</a>
+                                                <a href="https://conferenceiiagabon.ga/liste-des-hotels/">{{ __('form.hotel') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/restaurants/">Restaurants</a>
+                                                <a href="https://conferenceiiagabon.ga/restaurants/">{{ __('form.restaurant') }}</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="https://conferenceiiagabon.ga/transports/">Transport</a>
+                                                <a href="https://conferenceiiagabon.ga/transports/">{{ __('form.transport') }}</a>
                                             </li>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="https://conferenceiiagabon.ga/formalites/">Formalités</a></li>
-                                    <li><a href="https://conferenceiiagabon.ga/contact/">Contact</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/formalites/">{{ __('form.formalites') }}</a></li>
+                                    <li><a href="https://conferenceiiagabon.ga/contact/">{{ __('form.contact') }}</a></li>
                                 </ul>
 
                             </nav>
@@ -141,17 +141,17 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="tz_breadcrumb_single_cat_title">
-                            <h4> Inscription </h4>
+                            <h4> {{ __('form.inscription') }} </h4>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="tz-breadcrumb">
                             <h4>
                                 <span>
-                                    <a class="home" href="index-2.html">Accueil / </a>
+                                    <a class="home" href="https://conferenceiiagabon.ga/">{{ __('form.home') }} / </a>
                                 </span>
                                 <span>
-                                    Inscription
+                                    {{ __('form.inscription') }}
                                 </span>
                             </h4>
                         </div>
@@ -170,13 +170,13 @@
 
             <aside class="MultiColorSubscribeWidget widget">
                 <h3 class="module-title">
-                    <span>Restez informer..!</span>
+                    <span>{{ __('form.keep-contact') }}</span>
                 </h3>
                 <div class="multicolor-subscribe">
                     <div class="max-email-box">
                         <form class="multicolor-subscribe-form">
-                            <input class="email commons mcolor-subbox" type="email" placeholder="Votre Email..." name="email">
-                            <input class="mcolor-button subscribe commons" type="submit" value="S'INSCRIRE" name="commit">
+                            <input class="email commons mcolor-subbox" type="email" placeholder=" {{ __('form.email') }}..." name="email">
+                            <input class="mcolor-button subscribe commons" type="submit" value="{{ __('form.register') }}" name="commit">
                         </form>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                 <p>
                     Copyright &copy; 2023
                     <a target="_blank" href="#">CIIAG </a>
-                    Tous Droits Réservés.
+                    {{ __('form.copyright') }}.
                 </p>
             </div>
         </footer>
@@ -216,38 +216,71 @@
 
     </div>
 
-    <div class="wrap-template">
-        <div class="transcy-switch notranslate">
-            <div class="default-template" positon-float="Top-right" english-name="only-flag">
-                <div class="lang-current" arrow-icon="caret-down" effect="small-shadow" hover-effect="large-shadow" flag-style="square circle" flag-size="small" english-name="only-flag">
-                    <div class="wrap-flag fr">
-                            <div class="lang-flag"></div>
+    @if (session()->get('locale') == 'fr')
+        <div class="wrap-template">
+            <div class="transcy-switch notranslate">
+                <div class="default-template" positon-float="Top-right" english-name="only-flag">
+                    <div class="lang-current" arrow-icon="caret-down" effect="small-shadow" hover-effect="large-shadow" flag-style="square circle" flag-size="small" english-name="only-flag">
+                        <div class="wrap-flag fr">
+                                <div class="lang-flag"></div>
+                        </div>
+                        <div class="lang-text">
+                            <span>Français</span>
+                        </div>
+                        <div class="lang-arrow"></div>
                     </div>
-                    <div class="lang-text">
-                        <span>French</span>
+                    <div class="lang-target">
+                        <ul>
+                            <li>
+                                <a href="{{route('changeLang')}}?lang=en">
+                                    <div class="wrap-flag en">
+                                        <div class="lang-flag"></div>
+                                    </div>
+                                    <span>English</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="lang-arrow"></div>
-                </div>
-                <div class="lang-target">
-                    <ul>
-                        <li>
-                            <a href="https://conferenceiiagabon.ga/formalites/?lang=en">
-                                <div class="wrap-flag en">
-                                    <div class="lang-flag"></div>
-                                </div>
-                                <span>English</span>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    @else
+        <div class="wrap-template">
+            <div class="transcy-switch notranslate">
+                <div class="default-template" positon-float="Top-right" english-name="only-flag">
+                    <div class="lang-current" arrow-icon="caret-down" effect="small-shadow" hover-effect="large-shadow" flag-style="square circle" flag-size="small" english-name="only-flag">
+                        <div class="wrap-flag en">
+                                <div class="lang-flag"></div>
+                        </div>
+                        <div class="lang-text">
+                            <span>English</span>
+                        </div>
+                        <div class="lang-arrow"></div>
+                    </div>
+                    <div class="lang-target">
+                        <ul>
+                            <li>
+                                <a href="{{route('changeLang')}}?lang=fr">
+                                    <div class="wrap-flag fr">
+                                        <div class="lang-flag"></div>
+                                    </div>
+                                    <span>Français</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('front/js/library/jquery.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ asset('front/js/library/bootstrap.min.js') }}"></script>
+
+
     <script>
         jQuery.noConflict();
     </script>
@@ -257,11 +290,11 @@
 
     <!-- Include custom js -->
     <script src="{{ asset('front/js/custom.js') }}"></script>
-
-    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/script.js?ver=1682152419" id="transcy-front-script-js"></script>
-    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/front.js?ver=1682152419" id="transcy-front-js-js"></script>
+    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/script.js" id="transcy-front-script-js"></script>
+    <script type="text/javascript" src="https://conferenceiiagabon.ga/wp-content/plugins/transcy/assets/js/front.js" id="transcy-front-js-js"></script>
 
     @stack('scripts')
+
 
     </body>
 

@@ -17,6 +17,7 @@ use App\Models\Registration;
 use App\Models\School;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
@@ -400,6 +401,19 @@ class WelcomeController extends BasicController
         } else {
             return null;
         }
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function lang(Request $request)
+    {
+        App::setLocale($request->lang);
+        session()->put('locale', $request->lang);
+
+        return redirect()->back();
     }
 
 
