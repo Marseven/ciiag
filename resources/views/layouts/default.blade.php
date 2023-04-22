@@ -248,7 +248,7 @@
                 </div>
             </div>
         </div>
-    @else
+    @elseif ($lang == 'en')
         <div class="wrap-template">
             <div class="transcy-switch notranslate">
                 <div class="default-template" positon-float="Top-right" english-name="only-flag">
@@ -269,6 +269,34 @@
                                         <div class="lang-flag"></div>
                                     </div>
                                     <span>Français</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @else
+        <div class="wrap-template">
+            <div class="transcy-switch notranslate">
+                <div class="default-template" positon-float="Top-right" english-name="only-flag">
+                    <div class="lang-current" arrow-icon="caret-down" effect="small-shadow" hover-effect="large-shadow" flag-style="square circle" flag-size="small" english-name="only-flag">
+                        <div class="wrap-flag fr">
+                                <div class="lang-flag"></div>
+                        </div>
+                        <div class="lang-text">
+                            <span>Français</span>
+                        </div>
+                        <div class="lang-arrow"></div>
+                    </div>
+                    <div class="lang-target">
+                        <ul>
+                            <li>
+                                <a href="{{route('changeLang')}}?lang=en">
+                                    <div class="wrap-flag en">
+                                        <div class="lang-flag"></div>
+                                    </div>
+                                    <span>English</span>
                                 </a>
                             </li>
                         </ul>
