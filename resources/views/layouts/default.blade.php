@@ -42,14 +42,14 @@
             <div class="tz_meetup_header_option">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                             <div class="tz_meetup_header_option_phone">
                                 <div class="tz_meetup_header_option_phone">
                                     <p class="tz_description_event"> {{ __('form.slide-text') }} </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <div class="tz-headerRight text-right">
                                 <ul>
                                     <li>
