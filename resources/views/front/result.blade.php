@@ -17,7 +17,7 @@
 
                 <div class="col-lg-9 col-md-7 col-sm-12 col-xs-12">
 
-                    @if ($registration)
+                    @if ($entity)
                         <div class="tz_width_column tz_text_box_slider_padding">
                             <div class="tz_check_width_right_position tz_custom_width tz_width_box" style="width: 490px;">
                                 <div class="tz_maniva_meetup_title tz_box_text_bk text-left">
@@ -25,80 +25,159 @@
                                     <div class="tz_image_title_meetup">
                                         <hr>
                                     </div>
-                                <span class="tz_meetup_video_sub_title">
-                                    <i class="fa fa-clock-o tz_icon_position_left"></i>
-                                    15-16 {{ __('form.june') }} 2023 – {{ __('form.ticket') }} N°{{$registration->id}}
-                                    <span class="tz_meetup_video_sub_title_line"></span>
-                                </span>
-                                    <div class="tz_meetup_content">
+                                    <span class="tz_meetup_video_sub_title">
+                                        <i class="fa fa-clock-o tz_icon_position_left"></i>
+                                        15-16 {{ __('form.june') }} 2023 – {{ __('form.ticket') }} N°{{$entity->id}}
+                                        <span class="tz_meetup_video_sub_title_line"></span>
+                                    </span>
+                                    @if ($type == "reg")
+                                        <div class="tz_meetup_content">
 
-                                        <ul class="tz-plazart-list">
-                                            <li>
-                                        <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                            <i class="fa fa-check-square-o"></i>
-                                        </span>
-                                                <p class="tz_list_item_content"> {{ __('form.lastname') }} & {{ __('form.firstname') }} : {{$registration->firstname}} {{$registration->lastname}} </p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.gender') }} : {{$registration->sexe == "F" ? "Femme" : "Homme"}} </p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.email') }} : {{$registration->email}}</p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.phone') }} : {{$registration->phone_mobile}} {{' /'.$registration->phone_fixe}} </p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.country') }} : {{$registration->country}}</p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.number-adherent') }} : {{$registration->adherant  == 1 ? $registration->number_adherant : "Pas adhérant"}}</p>
-                                            </li>
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.gala') }} : {{$registration->gala == 1 ? "Oui" : "Non"}} </p>
-                                            </li>
+                                            <ul class="tz-plazart-list">
+                                                <li>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                    <p class="tz_list_item_content"> {{ __('form.lastname') }} & {{ __('form.firstname') }} : {{$entity->firstname}} {{$entity->lastname}} </p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.gender') }} : {{$entity->sexe == "F" ? "Femme" : "Homme"}} </p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.email') }} : {{$entity->email}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.phone') }} : {{$entity->phone_mobile}} {{' /'.$entity->phone_fixe}} </p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.country') }} : {{$entity->country}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.number-adherent') }} : {{$entity->adherant  == 1 ? $entity->number_adherant : "Pas adhérant"}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.gala') }} : {{$entity->gala == 1 ? "Oui" : "Non"}} </p>
+                                                </li>
 
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.date1') }} : </p>
-                                                    <ul>
-                                                        <li>{{$registration->atelierj1->label}}</li>
-                                                        <li>{{$registration->atelierj2->label}}</li>
-                                                    </ul>
-                                            </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.date1') }} : </p>
+                                                        <ul>
+                                                            <li>{{$entity->atelierj1->label}}</li>
+                                                            <li>{{$entity->atelierj2->label}}</li>
+                                                        </ul>
+                                                </li>
 
-                                            <li>
-                                                <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
-                                                    <i class="fa fa-check-square-o"></i>
-                                                </span>
-                                                    <p class="tz_list_item_content"> {{ __('form.date2') }} : </p>
-                                                    <ul>
-                                                        <li>{{$registration->atelierj3->label}}</li>
-                                                        <li>{{$registration->atelierj4->label}}</li>
-                                                    </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.date2') }} : </p>
+                                                        <ul>
+                                                            <li>{{$entity->atelierj3->label}}</li>
+                                                            <li>{{$entity->atelierj4->label}}</li>
+                                                        </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    @else
+                                        <div class="tz_meetup_content">
+
+                                            <ul class="tz-plazart-list">
+                                                <li>
+                                            <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </span>
+                                                    <p class="tz_list_item_content"> {{ __('form.label-ent') }} : {{$entity->label}} </p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.email') }} : {{$entity->email}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.phone') }} : {{$entity->phone}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.country') }} : {{$entity->country}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.number-adherent') }} : {{$entity->adherant  == 1 ? $entity->number_adherant : "Pas adhérant"}}</p>
+                                                </li>
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.gala') }} : {{$entity->gala == 1 ? "Oui" : "Non"}} </p>
+                                                </li>
+
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.date1') }} : </p>
+                                                        <ul>
+                                                            <li>{{$entity->atelierj1->label}}</li>
+                                                            <li>{{$entity->atelierj2->label}}</li>
+                                                        </ul>
+                                                </li>
+
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.date2') }} : </p>
+                                                        <ul>
+                                                            <li>{{$entity->atelierj3->label}}</li>
+                                                            <li>{{$entity->atelierj4->label}}</li>
+                                                        </ul>
+                                                </li>
+
+                                                <li>
+                                                    <span class="tz_icon_maniva_list tz_icon_maniva_list_style_1">
+                                                        <i class="fa fa-check-square-o"></i>
+                                                    </span>
+                                                        <p class="tz_list_item_content"> {{ __('form.list-members') }} : </p>
+                                                        <ul>
+                                                            @foreach ($entity->membres as $membre)
+                                                                <li>{{$membre->sexe == 'F' ? 'Mme.' : 'M.'}} {{$membre->firstname}} {{$membre->lastname}}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    @endif
+
                                     <a class="tz_btn_video_meetup tz_btn_shop_meetup tz_meetup_btn_dark" onclick="javascript:window.print();" href="#">{{ __('form.download') }}</a>
                                 </div>
                             </div>

@@ -236,7 +236,7 @@
                     <div class="lang-target">
                         <ul>
                             <li>
-                                <a href="{{route('changeLang')}}?lang=en">
+                                <a href="{{route('changeLang')}}/?lang=en">
                                     <div class="wrap-flag en">
                                         <div class="lang-flag"></div>
                                     </div>
@@ -264,7 +264,7 @@
                     <div class="lang-target">
                         <ul>
                             <li>
-                                <a href="{{route('changeLang')}}?lang=fr">
+                                <a href="{{route('changeLang')}}/?lang=fr">
                                     <div class="wrap-flag fr">
                                         <div class="lang-flag"></div>
                                     </div>
@@ -292,7 +292,7 @@
                     <div class="lang-target">
                         <ul>
                             <li>
-                                <a href="{{route('changeLang')}}?lang=en">
+                                <a href="{{route('changeLang')}}/?lang=en">
                                     <div class="wrap-flag en">
                                         <div class="lang-flag"></div>
                                     </div>

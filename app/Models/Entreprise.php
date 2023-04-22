@@ -14,5 +14,25 @@ class Entreprise extends Model
         return $this->hasMany(Membre::class, 'entreprise_id');
     }
 
+    public function atelierj1()
+    {
+        return $this->belongsTo(Atelier::class, 'atelier_j1_a1');
+    }
+
+    public function atelierj2()
+    {
+        return $this->belongsTo(Atelier::class, 'atelier_j1_a2');
+    }
+
+    public function atelierj3()
+    {
+        return $this->belongsTo(Atelier::class, 'atelier_j2_a1');
+    }
+
+    public function atelierj4()
+    {
+        return $this->belongsTo(Atelier::class, 'atelier_j2_a2');
+    }
+
 
 }

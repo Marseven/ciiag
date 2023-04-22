@@ -61,9 +61,9 @@ Route::get('/email/verification-notification', function () {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::post('/notification/ebilling', [WelcomeController::class, 'notify_ebilling'])->name('notification-ebilling-payment');
-Route::get('/callback/ebilling/{entity}', [WelcomeController::class, 'callback_ebilling'])->name('ebilling-payment');
+Route::get('/callback/ebilling/{type}/{entity}', [WelcomeController::class, 'callback_ebilling'])->name('ebilling-payment');
 
-Route::get('/lang', [WelcomeController::class, 'lang'])->name('changeLang');
+Route::get('/switchlang', [WelcomeController::class, 'lang'])->name('changeLang');
 
 Route::middleware('auth')->group(function () {
 

@@ -205,7 +205,7 @@ class WelcomeController extends BasicController
             $eb_reference = WelcomeController::str_reference(10);
             $eb_email = $entity->email;
             $eb_msisdn = isset($entity->phone_mobile) ? $entity->phone_mobile : $entity->phone;
-            $eb_callbackurl = url('/callback/ebilling/' . $entity->id);
+            $eb_callbackurl = url('/callback/ebilling/'.$type.'/' . $entity->id);
 
 
             $expiry_period = 60; // 60 minutes timeout
@@ -300,23 +300,33 @@ class WelcomeController extends BasicController
         exit();
     }
 
-    public function callback_ebilling($entity)
+    public function callback_ebilling($type, $entity)
     {
+        if($type == "reg"){
+            $registration = Registration::find($entity)->first();
+            $payment = Payment::where('registration_id', $registration->id)->first();
+        }else{
+            $entreprise = Entreprise::find($entity)->first();
+            $payment = Payment::where('entreprise_id', $entreprise->id)->first();
+        }
 
-        $registration = Registration::find($entity);
-
-        $payment = Payment::where('registration_id', $registration->id)->first();
 
         if ($payment->status == STATUT_PAID) {
 
-            $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+            if($type == "reg"){
+                $entity =  $registration->load(['atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+            }else{
+               $entity =  $entreprise->load(['membres', 'atelierj1', 'atelierj2', 'atelierj3', 'atelierj4']);
+            }
+
 
             //dd($registration);
 
             return view(
                 'front.result',
                 [
-                    'registration' => $registration,
+                    'entity' => $entity,
+                    'type' => $type,
                     'payment' => $payment,
                     'user' => Auth::user(),
                 ]
