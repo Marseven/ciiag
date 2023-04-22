@@ -3,8 +3,6 @@
 
 @php
     $lang = session()->get('locale');
-
-    //dd($lang);
 @endphp
 
     <head>
@@ -71,7 +69,7 @@
                 <div class="container">
                     <div class="tzHeaderContainer">
                         <h3 class="pull-left tz_logo">
-                            <a title="Home" href="{{route('home')}}/?lang={{session()->get('locale')}}">
+                            <a title="Home" href="{{route('home')}}/?lang={{$lang}}">
                                 <img src="{{ asset('front/images/logo-ciiag-2.png') }}" alt="maniva-meetup" width="80%">
                             </a>
                         </h3>
@@ -221,7 +219,9 @@
         <!-- footer end -->
 
     </div>
-
+@php
+    dd($lang);
+@endphp
     @if ($lang == 'fr')
         <div class="wrap-template">
             <div class="transcy-switch notranslate">
