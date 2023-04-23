@@ -192,7 +192,7 @@ class WelcomeController extends BasicController
                 $eb_amount *= $entity->membres->count();
 
                 if($entity->membres->count() >= 5){
-                    $eb_amount *= 0.95;
+                    $eb_amount *= 0.97;
                 }elseif($entity->membres->count() >= 10){
                     $eb_amount *= 0.93;
                 }

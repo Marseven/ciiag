@@ -12,11 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Application de vente de tickets" name="description" />
     <meta content="CodeurX" name="author" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     @stack('styles')
-
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('admin/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -126,7 +127,13 @@
                         <li>
                             <a href="{{ url('/admin/list-registrations') }}" class="waves-effect">
                                 <i class="bx bxs-user-detail"></i>
-                                <span key="t-command">Liste</span>
+                                <span key="t-command">Liste des Particuliers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/admin/list-entreprises') }}" class="waves-effect">
+                                <i class="bx bxs-building"></i>
+                                <span key="t-command">Liste des entreprises</span>
                             </a>
                         </li>
 

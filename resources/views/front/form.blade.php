@@ -475,7 +475,7 @@
 
         $(".add").click(function(e) {
             e.preventDefault();
-            if (counter > 20) {
+            if (counter > 10) {
                 alert('Vous ne pouvez pas ajouter plus de 20 membres au même moment.', 'Attention');
                 return false;
             }

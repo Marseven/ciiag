@@ -81,11 +81,15 @@ Route::prefix('admin')->namespace('Admin')->middleware('admin')->group(function 
 
     //entreprise
     Route::get('/list-registrations', [DashboardController::class, 'index'])->name('admin-list-registrations');
-    Route::get('/add-registration', [DashboardController::class, 'add'])->name('admin-add-registration');
-    Route::post('/create-registration', [DashboardController::class, 'create'])->name('admin-create-registration');
     Route::post('/registration/{registration}', [DashboardController::class, 'update'])->name('admin-update-registration');
     Route::get('/ajax-registrations', [DashboardController::class, 'ajaxRegistrations'])->name('admin-ajax-registrations');
     Route::post('/ajax-registration', [DashboardController::class, 'getRegistration'])->name('admin-ajax-registration');
+
+    //entreprise
+    Route::get('/list-entreprises', [DashboardController::class, 'entreprises'])->name('admin-list-entreprises');
+    Route::post('/entreprise/{entreprise}', [DashboardController::class, 'update'])->name('admin-update-entreprise');
+    Route::get('/ajax-entreprises', [DashboardController::class, 'ajaxEntreprises'])->name('admin-ajax-entreprises');
+    Route::post('/ajax-entreprise', [DashboardController::class, 'getEntreprise'])->name('admin-ajax-entreprise');
 
     //users
     Route::get('/admin-profil', [UserController::class, 'profil'])->name('admin-profil');

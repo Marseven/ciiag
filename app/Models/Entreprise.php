@@ -9,6 +9,11 @@ class Entreprise extends Model
 {
     use HasFactory;
 
+    public function payment()
+    {
+        return $this->hasMany(Payment::class, 'entreprise_id');
+    }
+
     public function membres()
     {
         return $this->hasMany(Membre::class, 'entreprise_id');
