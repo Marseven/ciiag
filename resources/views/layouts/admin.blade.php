@@ -42,19 +42,19 @@
                     <div class="navbar-brand-box">
                         <a href="index-2.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="CIIAG" height="22">
+                                <img src="{{ asset('admin/images/logo_ciiag.png') }}" alt="CIIAG" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="CIIAG" height="17">
+                                <img src="{{ asset('admin/images/logo_ciiag.png') }}" alt="CIIAG" height="17">
                             </span>
                         </a>
 
                         <a href="index-2.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="CIIAG" height="22">
+                                <img src="{{ asset('admin/images/logo_ciiag.png') }}" alt="CIIAG" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('front/images/logo-ciiag.png') }}" alt="CIIAG" height="19">
+                                <img src="{{ asset('admin/images/logo_ciiag.png') }}" alt="CIIAG" height="19">
                             </span>
                         </a>
                     </div>
