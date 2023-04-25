@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
 
         Atelier::create([
             'code' => 'a5',
-            'label' => "A5 - Le renforcement du professionalisme: un atout majeur pour le devenir de l'Auditeur interne",
+            'label' => "A5 - Le renforcement du professionnalisme: un atout majeur pour le devenir de l'Auditeur interne",
         ]);
 
         Atelier::create([
@@ -102,12 +102,12 @@ class DatabaseSeeder extends Seeder
 
         Atelier::create([
             'code' => 'a7',
-            'label' => "A7 - L'audit interne, le controle interne, et l'inspection: comment organiser les activités pour optimiser le travail des services d'inspection dans l'administration publique ?",
+            'label' => "A7 - L'audit interne, le contrôle interne, et l'inspection: comment organiser les activités pour optimiser le travail des services d'inspection dans l'administration publique ?",
         ]);
 
         Atelier::create([
             'code' => 'a8',
-            'label' => "A8 - Les trois délis (Fraude-corruption-blanchiement): quels dispositifs de lutte efficace pour les organisations ?",
+            'label' => "A8 - Les trois délis (Fraude-corruption-blanchiment): quels dispositifs de lutte efficace pour les organisations ?",
         ]);
 
         Atelier::create([
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
 
         Atelier::create([
             'code' => 'a12',
-            'label' => "A12 - La mise en oeuvre et le suivi des recommandations: quelle responsabilté pour le management et quelle responsabilité pour l'audit interne ?",
+            'label' => "A12 - La mise en oeuvre et le suivi des recommandations: quelle responsabilité pour le management et quelle responsabilité pour l'audit interne ?",
         ]);
 
 
