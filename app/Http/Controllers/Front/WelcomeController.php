@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\FileController;
 use App\Mail\DemandeMessage;
 use App\Mail\RegistrationMessage;
-use App\Models\Demande;
+use Swift_TransportException;
 use App\Models\Entreprise;
 use App\Models\Membre;
 use App\Models\Offer;
@@ -354,18 +354,28 @@ class WelcomeController extends BasicController
                         $registration = Registration::find($payment->registration_id);
                         $registration->status = STATUT_PAID;
                         $registration->save();
-                        Mail::to($registration->email)->queue(new RegistrationMessage($registration));
+                        try {
+                            Mail::to($registration->email)->queue(new RegistrationMessage($registration));
                         foreach ($admins as $admin) {
                             Mail::to($admin->email)->queue(new DemandeMessage($registration));
                         }
+                        } catch (Swift_TransportException $e) {
+                            echo $e->getMessage();
+                        }
+
                     }else{
                         $entreprise = Registration::find($payment->entreprise_id);
                         $entreprise->status = STATUT_PAID;
                         $entreprise->save();
-                        Mail::to($entreprise->email)->queue(new RegistrationMessage($entreprise));
-                        foreach ($admins as $admin) {
-                            Mail::to($admin->email)->queue(new DemandeMessage($entreprise));
+                        try {
+                            Mail::to($entreprise->email)->queue(new RegistrationMessage($entreprise));
+                            foreach ($admins as $admin) {
+                                Mail::to($admin->email)->queue(new DemandeMessage($entreprise));
+                            }
+                        } catch (Swift_TransportException $e) {
+                            echo $e->getMessage();
                         }
+
                     }
 
                     return http_response_code(200);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BasicController;
+use App\Models\Atelier;
 use App\Models\Entreprise;
 use App\Models\Payment;
 use App\Models\Registration;
@@ -29,9 +30,33 @@ class DashboardController extends BasicController
         ]);
     }
 
+    public function filter(Request $request){
+        if($request->send == "view"){
+            if($request->type == "entreprise"){
+
+                if($request->atelier == 0){
+                    return redirect()->route('admin-list-entreprises', ['atelier' => $request->atelier]);
+                }
+                return redirect()->route('admin-filter-entreprises', ['atelier' => $request->atelier]);
+            }else{
+                if($request->atelier == 0){
+                    return redirect()->route('admin-list-registrations', ['atelier' => $request->atelier]);
+                }
+                return redirect()->route('admin-filter-registrations', ['atelier' => $request->atelier]);
+            }
+
+        }else{
+            return redirect()->route('export', ['type' => $request->type, 'atelier' => $request->atelier, 'extension' => $request->extension]);
+        }
+        //dd('En cours de réalisation');
+    }
+
     public function index(){
+        $ateliers = Atelier::all();
         return view(
-            'admin.registration.index'
+            'admin.registration.index', [
+                'ateliers' => $ateliers,
+            ]
         );
     }
 
@@ -61,6 +86,134 @@ class DashboardController extends BasicController
             ->where('registrations.lastname', 'like', '%' . $searchValue . '%')
             ->orWhere('registrations.email', 'like', '%' . $searchValue . '%')
             ->orWhere('registrations.phone_fixe', 'like', '%' . $searchValue . '%')
+            ->select('registrations.*')
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();
+
+        $data_arr = array();
+
+        foreach ($records as $record) {
+
+            $record->load(['payment']);
+
+            $id = $record->id;
+
+            $name = $record->firstname.' '.$record->lastname;
+            $email = $record->email;
+            $gender = $record->sexe == "H" ?  'Homme' : 'Femme';
+            $phone = $record->phone_fixe.' / '.$record->phone_mobile;
+            $country = $record->country;
+            $adherant = $record->adherant == 1 ?  'Adhérent N° : ' . $record->number_adherant : 'Externe';
+            $gala = $record->gala == 1 ?  'Oui' : 'Non';
+
+            $status = BasicController::status($record->status);
+            $status = '<span class="badge badge-pill badge-soft-' . $status['type'] . ' font-size-12">' . $status['message'] . '</span>';
+
+
+
+            $actions = '<a class="btn btn-outline-primary btn-sm edit modal_view_action" data-bs-toggle="modal"
+          data-id="' . $record->id . '"
+          data-bs-target="#cardModalView" title="view">
+          <i class="fas fa-eye"></i>
+      </a>';
+
+
+            $actions .= '
+          <a class="btn btn-outline-danger btn-sm modal_delete_action" data-bs-toggle="modal"
+          data-id="' . $record->id . '"
+          data-bs-target="#cardModalCenter" title="Delete">
+          <i class="fas fa-trash"></i>
+      </a>';
+
+
+            $data_arr[] = array(
+                "id" => $id,
+                "name" => $name,
+                "email" => $email,
+                "phone" => $phone,
+                "gender" => $gender,
+                "country" => $country,
+                "adherant" => $adherant,
+                "gala" => $gala,
+                "status" => $status,
+                "actions" => $actions,
+            );
+        }
+
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr
+        );
+
+        Log::info('Afficher la liste de paiements à ' . Auth::user()->name);
+
+        return response()->json($response);
+    }
+
+    public function filterReg(Request $request){
+        $ateliers = Atelier::all();
+        $at = Atelier::where('id', $request->get('atelier'))->first();
+
+        return view(
+            'admin.registration.filter', [
+                'ateliers' => $ateliers,
+                'at' => $at,
+            ]
+        );
+    }
+
+    public function  ajaxFilterRegistrations(Request $request)
+    {
+        ## Read value
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // Rows display per page
+
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+        $_GET['search'] = $search_arr['value'];
+        $_GET['atelier'] = $request->atelier;
+        // Total records
+        $totalRecords = Entreprise::select('count(*) as allcount')->where(function ($query) {
+            $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+            $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+        })->count();
+        $totalRecordswithFilter = Registration::select('count(*) as allcount')->where(function ($query) {
+            $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+            $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+        })->where('lastname', 'like', '%' . $searchValue . '%')->orWhere('registrations.email', 'like', '%' . $searchValue . '%')->orWhere('registrations.phone_mobile', 'like', '%' . $searchValue . '%')->count();
+
+        // Fetch records
+        $records = Registration::orderBy($columnName, $columnSortOrder)
+            ->where(function ($query) {
+                $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+                $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+            })
+            ->where(function ($query) {
+                $searchValue =  isset($_GET['search']) ? $_GET['search'] : '';
+                $query->where('registrations.lastname', 'like', '%' . $searchValue . '%')
+                      ->orWhere('registrations.email', 'like', '%' . $searchValue . '%')
+                      ->orWhere('registrations.phone_mobile', 'like', '%' . $searchValue . '%');
+            })
             ->select('registrations.*')
             ->skip($start)
             ->take($rowperpage)
@@ -235,8 +388,11 @@ class DashboardController extends BasicController
     }
 
     public function entreprises(){
+        $ateliers = Atelier::all();
         return view(
-            'admin.entreprise.index'
+            'admin.entreprise.index', [
+                'ateliers' => $ateliers,
+            ]
         );
     }
 
@@ -266,6 +422,133 @@ class DashboardController extends BasicController
             ->where('entreprises.label', 'like', '%' . $searchValue . '%')
             ->orWhere('entreprises.email', 'like', '%' . $searchValue . '%')
             ->orWhere('entreprises.phone', 'like', '%' . $searchValue . '%')
+            ->select('entreprises.*')
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();
+
+        $data_arr = array();
+
+        foreach ($records as $record) {
+
+            $record->load(['payment']);
+
+            $id = $record->id;
+
+            $label = $record->label;
+            $adress = $record->adress;
+            $email = $record->email;
+            $phone = $record->phone;
+            $country = $record->country;
+            $adherant = $record->adherant == 1 ?  'Adhérent N° : ' . $record->number_adherant : 'Externe';
+            $gala = $record->gala == 1 ?  'Oui' : 'Non';
+
+            $status = BasicController::status($record->status);
+            $status = '<span class="badge badge-pill badge-soft-' . $status['type'] . ' font-size-12">' . $status['message'] . '</span>';
+
+
+
+            $actions = '<a class="btn btn-outline-primary btn-sm edit modal_view_action" data-bs-toggle="modal"
+          data-id="' . $record->id . '"
+          data-bs-target="#cardModalView" title="view">
+          <i class="fas fa-eye"></i>
+      </a>';
+
+
+            $actions .= '
+          <a class="btn btn-outline-danger btn-sm modal_view_action" data-bs-toggle="modal"
+          data-id="' . $record->id . '"
+          data-bs-target="#cardModalCenter" title="Delete">
+          <i class="fas fa-trash"></i>
+      </a>';
+
+
+            $data_arr[] = array(
+                "id" => $id,
+                "label" => $label,
+                "email" => $email,
+                "phone" => $phone,
+                "adress" => $adress,
+                "country" => $country,
+                "adherant" => $adherant,
+                "gala" => $gala,
+                "status" => $status,
+                "actions" => $actions,
+            );
+        }
+
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr
+        );
+
+        Log::info('Afficher la liste de paiements à ' . Auth::user()->name);
+
+        return response()->json($response);
+    }
+
+    public function filterEnt(Request $request){
+        $ateliers = Atelier::all();
+        $at = Atelier::where('id', $request->get('atelier'))->first();
+        return view(
+            'admin.entreprise.filter', [
+                'ateliers' => $ateliers,
+                'at' => $at,
+            ]
+        );
+    }
+
+    public function  ajaxFilterEntreprises(Request $request)
+    {
+        ## Read value
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // Rows display per page
+
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+        $_GET['search'] = $search_arr['value'];
+        $_GET['atelier'] = $request->atelier;
+        // Total records
+        $totalRecords = Entreprise::select('count(*) as allcount')->where(function ($query) {
+            $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+            $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+        })->count();
+        $totalRecordswithFilter = Entreprise::select('count(*) as allcount')->where(function ($query) {
+            $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+            $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+        })->where('label', 'like', '%' . $searchValue . '%')->orWhere('entreprises.email', 'like', '%' . $searchValue . '%')->orWhere('entreprises.phone', 'like', '%' . $searchValue . '%')->count();
+
+        // Fetch records
+        $records = Entreprise::orderBy($columnName, $columnSortOrder)
+            ->where(function ($query) {
+                $searchValue =  isset($_GET['atelier']) ? $_GET['atelier'] : '';
+                $query->where('atelier_j1_a1',  $searchValue )
+                ->orWhere('atelier_j1_a2',  $searchValue )
+                ->orWhere('atelier_j2_a1',  $searchValue )
+                ->orWhere('atelier_j2_a2',  $searchValue );
+            })
+            ->where(function ($query) {
+                $searchValue =  isset($_GET['search']) ? $_GET['search'] : '';
+                $query->where('entreprises.label', 'like', '%' . $searchValue . '%')
+                      ->orWhere('entreprises.email', 'like', '%' . $searchValue . '%')
+                      ->orWhere('entreprises.phone', 'like', '%' . $searchValue . '%');
+            })
             ->select('entreprises.*')
             ->skip($start)
             ->take($rowperpage)

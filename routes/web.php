@@ -1,13 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\BookingController;
-use App\Http\Controllers\Admin\CommandController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\PayoutController;
-use App\Http\Controllers\Admin\PlaceController;
-use App\Http\Controllers\Admin\VehicleController;
-use App\Http\Controllers\Front\CustomerController;
 use App\Http\Controllers\Front\WelcomeController;
 use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -79,17 +75,23 @@ Route::prefix('admin')->namespace('Admin')->middleware('admin')->group(function 
     Route::get('/', [DashboardController::class, 'dashboard']);
     Route::get('/notifications', [DashboardController::class, 'notifications']);
 
-    //entreprise
+    //registration
     Route::get('/list-registrations', [DashboardController::class, 'index'])->name('admin-list-registrations');
     Route::post('/registration/{registration}', [DashboardController::class, 'update'])->name('admin-update-registration');
     Route::get('/ajax-registrations', [DashboardController::class, 'ajaxRegistrations'])->name('admin-ajax-registrations');
     Route::post('/ajax-registration', [DashboardController::class, 'getRegistration'])->name('admin-ajax-registration');
+
+    Route::get('/filter-registrations', [DashboardController::class, 'filterReg'])->name('admin-filter-registrations');
+    Route::post('/ajax-filter-registrations', [DashboardController::class, 'ajaxFilterRegistrations'])->name('admin-ajax-filter-registrations');
 
     //entreprise
     Route::get('/list-entreprises', [DashboardController::class, 'entreprises'])->name('admin-list-entreprises');
     Route::post('/entreprise/{entreprise}', [DashboardController::class, 'update'])->name('admin-update-entreprise');
     Route::get('/ajax-entreprises', [DashboardController::class, 'ajaxEntreprises'])->name('admin-ajax-entreprises');
     Route::post('/ajax-entreprise', [DashboardController::class, 'getEntreprise'])->name('admin-ajax-entreprise');
+
+    Route::get('/filter-entreprises', [DashboardController::class, 'filterEnt'])->name('admin-filter-entreprises');
+    Route::post('/ajax-filter-entreprises', [DashboardController::class, 'ajaxFilterEntreprises'])->name('admin-ajax-filter-entreprises');
 
     //users
     Route::get('/admin-profil', [UserController::class, 'profil'])->name('admin-profil');
@@ -126,6 +128,10 @@ Route::prefix('admin')->namespace('Admin')->middleware('admin')->group(function 
     Route::post('/payout/{payout}', [PayoutController::class, 'update'])->name('admin-update-payout');
     Route::get('/ajax-payouts', [PayoutController::class, 'ajaxPayouts'])->name('admin-ajax-payouts');
     Route::post('/ajax-payout', [PayoutController::class, 'getPayout'])->name('admin-ajax-payout');
+
+    Route::get('/export', [ExportController::class, 'index'])->name('export');
+    Route::post('/filter', [DashboardController::class, 'filter'])->name('filter');
+
 
 });
 

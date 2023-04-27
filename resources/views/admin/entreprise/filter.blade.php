@@ -21,11 +21,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Liste des Inscriptions</h4>
+                        <h4 class="mb-sm-0 font-size-18">Liste des entreprises</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active">Inscriptions</li>
+                                <li class="breadcrumb-item active">Entreprises</li>
                             </ol>
                         </div>
 
@@ -45,13 +45,13 @@
                             <form class="row g-3 needs-validation" method="POST"
                                 action="{{ url('admin/filter/') }}">
                                 @csrf
-                                <input type="hidden" name="type" value="registration">
+                                <input type="hidden" name="type" value="entreprise">
                                 <div class="col-md-1">
                                     <label for="atelier">Atelier</label>
                                     <select class="form-select" name="atelier" id="atelier">
                                         <option value="0">Tout</option>
                                         @foreach ($ateliers as $atelier)
-                                            <option value="{{$atelier->id}}"><span style="text-transform:uppercase;">{{$atelier->code}}</span></option>
+                                            <option style="text-transform:uppercase" value="{{$atelier->id}}">{{$atelier->code}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -76,16 +76,18 @@
                         </div>
                     </div>
 
+                    <h3> {{$at->label}}</h3>
+
                     <div class="card">
                         <div class="card-body">
                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nom Complet</th>
-                                        <th>Genre</th>
+                                        <th>Nom de l'entreprise</th>
                                         <th>Téléphone</th>
                                         <th>Email</th>
+                                        <th>Adresse</th>
                                         <th>Pays d'origine</th>
                                         <th>Statut</th>
                                         <th>Gala</th>
@@ -189,21 +191,31 @@
                 ],
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin-ajax-registrations') }}",
+                ajax: {
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    },
+                    dataType: 'json',
+                    url: "{{ route('admin-ajax-filter-entreprises') }}",
+                    type: 'POST',
+                    data: {
+                        "atelier":  {{$at->id}},
+                    }
+                },
                 columns: [{
                         data: 'id'
                     },
                     {
-                        data: 'name'
-                    },
-                    {
-                        data: 'gender'
+                        data: 'label'
                     },
                     {
                         data: 'phone'
                     },
                     {
                         data: 'email'
+                    },
+                    {
+                        data: 'adress'
                     },
                     {
                         data: 'country'
@@ -233,7 +245,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-registration') }}",
+                url: "{{ route('admin-ajax-entreprise') }}",
                 dataType: 'json',
                 data: {
                     "id": id,
@@ -262,7 +274,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-registration') }}",
+                url: "{{ route('admin-ajax-entreprise') }}",
                 dataType: 'json',
                 data: {
                     "id": id,
@@ -288,7 +300,7 @@
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type: "POST",
-                url: "{{ route('admin-ajax-registration') }}",
+                url: "{{ route('admin-ajax-entreprise') }}",
                 dataType: 'json',
                 data: {
                     "id": id,

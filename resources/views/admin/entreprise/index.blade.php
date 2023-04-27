@@ -36,6 +36,46 @@
 
             <div class="row">
                 <div class="col-12">
+
+                    <div class="tab-content p-4" id="pills-tabContent-table">
+                        <h3>Filtre</h3>
+                        <div class="tab-pane tab-example-design fade show active"
+                            id="pills-table-design" role="tabpanel"
+                            aria-labelledby="pills-table-design-tab">
+                            <form class="row g-3 needs-validation" method="POST"
+                                action="{{ url('admin/filter/') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="entreprise">
+                                <div class="col-md-1">
+                                    <label for="atelier">Atelier</label>
+                                    <select class="form-select" name="atelier" id="atelier">
+                                        <option value="0">Tout</option>
+                                        @foreach ($ateliers as $atelier)
+                                            <option style="text-transform:uppercase" value="{{$atelier->id}}">{{$atelier->code}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="extension">Format</label>
+                                    <select class="form-select" name="extension" required>
+                                        <option>EXCEL</option>
+                                        <option>CSV</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for=""></label>
+                                    <button name="send" class="form-control btn btn-primary"
+                                        type="submit" value="view">Afficher</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for=""></label>
+                                    <button name="send" class="form-control btn btn-primary"
+                                        type="submit" value="export">Expoter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <div class="card-body">
                             <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">

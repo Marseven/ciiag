@@ -51,7 +51,7 @@
                                     <select class="form-select" name="atelier" id="atelier">
                                         <option value="0">Tout</option>
                                         @foreach ($ateliers as $atelier)
-                                            <option value="{{$atelier->id}}"><span style="text-transform:uppercase;">{{$atelier->code}}</span></option>
+                                            <option style="text-transform:uppercase" value="{{$atelier->id}}">{{$atelier->code}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -75,6 +75,8 @@
                             </form>
                         </div>
                     </div>
+
+                    <h3> {{$at->label}}</h3>
 
                     <div class="card">
                         <div class="card-body">
@@ -189,7 +191,17 @@
                 ],
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin-ajax-registrations') }}",
+                ajax: {
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    },
+                    dataType: 'json',
+                    url: "{{ route('admin-ajax-filter-registrations') }}",
+                    type: 'POST',
+                    data: {
+                        "atelier": {{$at->id}},
+                    }
+                },
                 columns: [{
                         data: 'id'
                     },
