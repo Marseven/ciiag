@@ -179,6 +179,15 @@
                                         </div>
                                     </div>
 
+                                    <div id="budget">
+                                        <h4>Total à payer</h4>
+                                        <ul>
+                                            <li>Montant Net : {{__('form.price_e_bf')}}</li>
+                                            <li>Frais E-Billing : 11 250 FCFA</li>
+                                        </ul>
+                                        <h3>Total : 461 250 FCFA</h3>
+                                    </div>
+                                    <br>
                                     <p>
                                         <input class="wpcf7-form-control wpcf7-submit" type="submit" value="{{ __('form.register') }}">
                                     </p>
@@ -349,6 +358,17 @@
                                         </div>
                                     </div>
 
+                                    <div id="budget">
+                                        <h4>Total à payer</h4>
+                                        <ul>
+                                            <li>Montant Net : {{__('form.price_e_bf')}}</li>
+                                            <li>Frais E-Billing : 11 250 FCFA</li>
+                                        </ul>
+                                        <h5>Total : 461 250 FCFA</h5>
+                                    </div>
+
+
+
                                     <p>
                                         <input class="wpcf7-form-control wpcf7-submit" type="submit" value="{{ __('form.register') }}">
                                     </p>
@@ -373,26 +393,26 @@
                                     <h6>{{ __('form.inscription-before') }} </h6>
                                 <p>{{ __('form.adherent') }} : </p>
                                 <ul>
-                                    <li>300 000 FCFA</li>
-                                    <li>400 000 FCFA ({{ __('form.diner') }})</li>
+                                    <li>{{ __('form.price_a_bf') }}</li>
+                                    <li>{{ __('form.price_a_bf_g') }} ({{ __('form.diner') }})</li>
                                 </ul>
                                 <p>{{ __('form.externe') }} : </p>
                                 <ul>
-                                    <li>450 000 FCFA</li>
-                                    <li>550 000 FCFA ({{ __('form.diner') }})</li>
+                                    <li>{{ __('form.price_e_bf') }}</li>
+                                    <li>{{ __('form.price_e_bf_g') }} ({{ __('form.diner') }})</li>
                                 </ul>
                                 </div>
                                 <div class="col-lg-6">
                                     <h6>{{ __('form.inscription-after') }}</h6>
                                 <p>{{ __('form.adherent') }} : </p>
                                 <ul>
-                                    <li>370 000 FCFA</li>
-                                    <li>470 000 FCFA ({{ __('form.diner') }})</li>
+                                    <li>{{ __('form.price_a_af') }}</li>
+                                    <li>{{ __('form.price_a_af_g') }} ({{ __('form.diner') }})</li>
                                 </ul>
                                 <p>Externe : </p>
                                 <ul>
-                                    <li>520 000 FCFA</li>
-                                    <li>620 000 FCFA ({{ __('form.diner') }})</li>
+                                    <li>{{ __('form.price_e_af') }}</li>
+                                    <li>{{ __('form.price_e_af_g') }} ({{ __('form.diner') }})</li>
                                 </ul>
                                 </div>
                             </div>

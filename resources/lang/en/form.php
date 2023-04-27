@@ -78,5 +78,12 @@ return [
     'ticket' => 'Ticket',
     'june' => 'june',
     'register' => 'Register',
-
+    'price_a_bf' => '458 €',
+    'price_e_bf' => '686 €',
+    'price_a_bf_g' => '673 €',
+    'price_e_bf_g' => '839 €',
+    'price_a_af' => '564 €',
+    'price_e_af' => '793 €',
+    'price_a_af_g' => '717 €',
+    'price_e_af_g' => '945 €',
 ];

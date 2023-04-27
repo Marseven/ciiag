@@ -78,5 +78,13 @@ return [
     'ticket' => 'Billet',
     'june' => 'juin',
     'register' => 'S\'inscrire',
+    'price_a_bf' => '300 000 FCFA',
+    'price_e_bf' => '450 000 FCFA',
+    'price_a_bf_g' => '400 000 FCFA',
+    'price_e_bf_g' => '550 000 FCFA',
+    'price_a_af' => '370 000 FCFA',
+    'price_e_af' => '520 000 FCFA',
+    'price_a_af_g' => '470 000 FCFA',
+    'price_e_af_g' => '620 000 FCFA',
 ];
 
