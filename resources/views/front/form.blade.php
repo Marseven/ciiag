@@ -87,11 +87,11 @@
                                         <div class="col-lg-6">
                                             <h5>{{ __('form.status-iia') }}  : {{ __('form.adherent') }}</h5>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
+                                                <input class="form-check-input adherant" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
                                                 <label class="form-check-label" for="inlineCheckbox1">{{ __('form.yes') }}</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
+                                                <input class="form-check-input adherant" onChange="afficherPiece()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
                                                 <label class="form-check-label" for="inlineCheckbox2">{{ __('form.no') }}</label>
                                             </div>
                                             <p id="adherant" style="display:none">
@@ -106,11 +106,11 @@
                                                 {{ __('form.gala') }} :
                                             </h5>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox1" value="1">
+                                                <input class="form-check-input gala" name="gala" type="radio" id="inlineCheckbox1" value="1">
                                                 <label class="form-check-label" >{{ __('form.yes') }}</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
+                                                <input class="form-check-input gala" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
                                                 <label class="form-check-label" >{{ __('form.no') }}</label>
                                             </div>
                                         </div>
@@ -182,10 +182,10 @@
                                     <div id="budget">
                                         <h4>Total à payer</h4>
                                         <ul>
-                                            <li>Montant Net : {{__('form.price_e_bf')}}</li>
-                                            <li>Frais E-Billing : 11 250 FCFA</li>
+                                            <li>Montant Net : <span id="item-montant-net"></span> {{__('form.devise')}}</li>
+                                            <li>Frais E-Billing : <span id="item-montant-eb"></span> {{__('form.devise')}}</li>
                                         </ul>
-                                        <h3>Total : 461 250 FCFA</h3>
+                                        <h3>Total : <span id="item-montant-tt"></span> {{__('form.devise')}}</h3>
                                     </div>
                                     <br>
                                     <p>
@@ -237,11 +237,11 @@
                                         <div class="col-lg-6">
                                             <h5>{{ __('form.status-iia') }}  : {{ __('form.adherent') }}</h5>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
+                                                <input class="form-check-input adherant_ent" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox1" value="1">
                                                 <label class="form-check-label" for="inlineCheckbox1">{{ __('form.yes') }}</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
+                                                <input class="form-check-input adherant_ent" onChange="afficherad()" name="adherant" type="radio" id="inlineCheckbox2" value="0" checked>
                                                 <label class="form-check-label" for="inlineCheckbox2">{{ __('form.no') }}</label>
                                             </div>
                                             <p id="adherant_ent" style="display:none">
@@ -254,11 +254,11 @@
                                                 {{ __('form.gala') }} :
                                             </h5>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox1" value="1">
+                                                <input class="form-check-input gala_ent" name="gala" type="radio" id="inlineCheckbox1" value="1">
                                                 <label class="form-check-label" >{{ __('form.yes') }}</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
+                                                <input class="form-check-input gala_ent" name="gala" type="radio" id="inlineCheckbox2" value="0" checked>
                                                 <label class="form-check-label" >{{ __('form.no') }}</label>
                                             </div>
                                         </div>
@@ -358,13 +358,13 @@
                                         </div>
                                     </div>
 
-                                    <div id="budget">
+                                    <div id="budget-ent">
                                         <h4>Total à payer</h4>
                                         <ul>
-                                            <li>Montant Net : {{__('form.price_e_bf')}}</li>
-                                            <li>Frais E-Billing : 11 250 FCFA</li>
+                                            <li>Montant Net : <span id="item-montant-net-ent"></span> {{__('form.devise')}}</li>
+                                            <li>Frais E-Billing : <span id="item-montant-eb-ent"></span> {{__('form.devise')}}</li>
                                         </ul>
-                                        <h5>Total : 461 250 FCFA</h5>
+                                        <h3>Total : <span id="item-montant-tt-ent"></span> {{__('form.devise')}}</h3>
                                     </div>
 
 
@@ -471,6 +471,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
     <script language="JavaScript">
+
+        function formatNumber(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+
+
         function afficherPiece() {
             var adherant = document.getElementById("adherant");
 
@@ -496,7 +502,7 @@
         $(".add").click(function(e) {
             e.preventDefault();
             if (counter > 10) {
-                alert('Vous ne pouvez pas ajouter plus de 20 membres au même moment.', 'Attention');
+                alert('Vous ne pouvez pas ajouter plus de 10 membres au même moment.', 'Attention');
                 return false;
             }
 
@@ -504,6 +510,7 @@
             content = '<div class="row" id="mb'+counter+'"><div class="col-lg-4"><p><input class="form-control" type="text" placeholder="Prénom *" aria-invalid="false" aria-required="true" size="40" value="" name="firstname[]"></p></div><div class="col-lg-4"><p><input class="form-control" type="text" placeholder="Nom *" aria-invalid="false" aria-required="true" size="40" value="" name="lastname[]"> </p></div><div class="col-lg-2"><p><select name="sexe[]" id="" class="form-control"><option value="H">Homme</option><option value="F">Femme</option></select></p></div><div class="col-lg-2"></div></div>';
             membre.insertAdjacentHTML('beforeend', content);
             counter++;
+            pay_ent();
 
         });
 
@@ -520,7 +527,110 @@
             var index = counter - 1;
             var mb = document.getElementById("mb" + counter);
             mb.remove();
+            pay_ent();
 
+        });
+
+        var today = new Date();
+        var date_limite = new Date('2023-05-20');
+        var montant_net = 0;
+        var fees_eb = 0;
+        var aPayer = 0;
+
+        function pay_reg(){
+            if(today <= date_limite){
+                if(document.form_reg.adherant.value == 1){
+                    montant_net = 300000;
+                }else{
+                    montant_net = 450000;
+                }
+            }else{
+                if(document.form_reg.adherant.value == 1){
+                    montant_net = 370000;
+                }else{
+                    montant_net = 520000;
+                }
+
+            }
+
+            if(document.form_reg.gala.value == 1){ montant_net += 100000;}
+
+            fees_eb = montant_net * 0.025;
+
+            aPayer = montant_net+fees_eb;
+
+            if(document.documentElement.lang == "en"){
+                montant_net /= 655.997;
+                fees_eb /= 655.997;
+                aPayer /= 655.997;
+            }
+
+            $("#item-montant-net").html(formatNumber(montant_net.toFixed(0)));
+            $("#item-montant-eb").html(formatNumber(fees_eb.toFixed(0)));
+            $("#item-montant-tt").html(formatNumber(aPayer.toFixed(0)));
+        }
+
+        pay_reg();
+
+        $(".gala").click(function() {
+
+            pay_reg();
+        });
+
+        $(".adherant").click(function() {
+
+            pay_reg();
+        });
+
+        var montant_net_ent = 0;
+        var fees_eb_ent = 0;
+        var aPayer_ent = 0;
+
+        function pay_ent(){
+            if(today <= date_limite){
+                if(document.form_ent.adherant.value == 1){
+                    montant_net_ent = 300000;
+                }else{
+                    montant_net_ent = 450000;
+                }
+            }else{
+                if(document.form_ent.adherant.value == 1){
+                    montant_net_ent = 370000;
+                }else{
+                    montant_net_ent = 520000;
+                }
+
+            }
+
+            if(document.form_ent.gala.value == 1){ montant_net_ent += 100000;}
+
+            montant_net_ent *= (counter-1);
+
+            fees_eb_ent = montant_net_ent * 0.025;
+
+            aPayer_ent = montant_net_ent+fees_eb_ent;
+
+            if(document.documentElement.lang == "en"){
+                montant_net_ent /= 655.997;
+                fees_eb_ent /= 655.997;
+                aPayer_ent /= 655.997;
+            }
+
+            $("#item-montant-net-ent").html(formatNumber(montant_net_ent.toFixed(0)));
+            $("#item-montant-eb-ent").html(formatNumber(fees_eb_ent.toFixed(0)));
+            $("#item-montant-tt-ent").html(formatNumber(aPayer_ent.toFixed(0)));
+        }
+
+        pay_ent();
+
+        $(".gala_ent").click(function() {
+
+            pay_ent();
+        });
+
+        $(".adherant_ent").click(function() {
+
+            pay_ent();
         });
     </script>
 @endpush

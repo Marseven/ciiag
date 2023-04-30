@@ -86,5 +86,6 @@ return [
     'price_e_af' => '520 000 FCFA',
     'price_a_af_g' => '470 000 FCFA',
     'price_e_af_g' => '620 000 FCFA',
+    'devise' => 'FCFA',
 ];
 

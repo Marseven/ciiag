@@ -86,4 +86,5 @@ return [
     'price_e_af' => '793 €',
     'price_a_af_g' => '717 €',
     'price_e_af_g' => '945 €',
+    'devise' => '€',
 ];

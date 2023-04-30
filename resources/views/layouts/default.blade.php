@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 @php
     $lang = App::getLocale();
 @endphp
+<!DOCTYPE html>
+<html lang="{{$lang}}">
+
 
     <head>
         <meta charset="utf-8">
