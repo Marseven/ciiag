@@ -87,5 +87,8 @@ return [
     'price_a_af_g' => '470 000 FCFA',
     'price_e_af_g' => '620 000 FCFA',
     'devise' => 'FCFA',
+    'fees_eb' => 'Frais E-Billing',
+    'montant_net' => 'Montant Net',
+    'price_total' => 'Total à payer',
 ];
 

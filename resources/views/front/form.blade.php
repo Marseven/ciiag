@@ -180,10 +180,10 @@
                                     </div>
 
                                     <div id="budget">
-                                        <h4>Total à payer</h4>
+                                        <h4>{{__('form.price_total')}}</h4>
                                         <ul>
-                                            <li>Montant Net : <span id="item-montant-net"></span> {{__('form.devise')}}</li>
-                                            <li>Frais E-Billing : <span id="item-montant-eb"></span> {{__('form.devise')}}</li>
+                                            <li>{{__('form.montant_net')}} : <span id="item-montant-net"></span> {{__('form.devise')}}</li>
+                                            <li>{{__('form.fees_eb')}} : <span id="item-montant-eb"></span> {{__('form.devise')}}</li>
                                         </ul>
                                         <h3>Total : <span id="item-montant-tt"></span> {{__('form.devise')}}</h3>
                                     </div>
@@ -359,10 +359,10 @@
                                     </div>
 
                                     <div id="budget-ent">
-                                        <h4>Total à payer</h4>
+                                        <h4>{{__('form.price_total')}}</h4>
                                         <ul>
-                                            <li>Montant Net : <span id="item-montant-net-ent"></span> {{__('form.devise')}}</li>
-                                            <li>Frais E-Billing : <span id="item-montant-eb-ent"></span> {{__('form.devise')}}</li>
+                                            <li>{{__('form.montant_net')}} : <span id="item-montant-net-ent"></span> {{__('form.devise')}}</li>
+                                            <li>{{__('form.fees_eb')}} : <span id="item-montant-eb-ent"></span> {{__('form.devise')}}</li>
                                         </ul>
                                         <h3>Total : <span id="item-montant-tt-ent"></span> {{__('form.devise')}}</h3>
                                     </div>

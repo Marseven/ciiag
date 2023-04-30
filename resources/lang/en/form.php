@@ -87,4 +87,7 @@ return [
     'price_a_af_g' => '717 €',
     'price_e_af_g' => '945 €',
     'devise' => '€',
+    'fees_eb' => 'Fees E-Billing',
+    'montant_net' => 'Net Amount',
+    'price_total' => 'Total payable',
 ];
