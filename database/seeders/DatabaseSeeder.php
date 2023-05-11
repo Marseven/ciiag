@@ -135,9 +135,9 @@ class DatabaseSeeder extends Seeder
         User::create([
             'lastname' => 'Admin',
             'firstname' => 'Super',
-            'phone' => '074228306',
-            'adress' => 'Montagne-Sainte',
-            'email' => 'superadmin@digitech-africa.com',
+            'phone' => '074010203',
+            'adress' => 'Louis',
+            'email' => 'superadmin@ciiag.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
